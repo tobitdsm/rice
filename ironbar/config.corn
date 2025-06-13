@@ -1,0 +1,146 @@
+let {
+    $tray = { type = "tray" }
+    $clock = {
+        type = "clock"
+        format = " %B %d  %H:%M"
+    }
+
+    $focused = {
+        type = "focused"
+        show_icon = false
+        show_title = true
+        icon_size = 24
+        icon_theme = "Tela-circle-nord"
+
+        truncate.mode = "end"
+        truncate.max_length = 25
+    }
+
+    // $music = {
+    //     type = "music"
+    //     player_type = "mpd"
+    //     format = "{artist} - {title}"
+    //     truncate = "end"
+    //     // truncate.length = 30
+    //     // truncate.max_length = 100
+    //     icons.play = " "
+    //     icons.pause = " "
+    //     icons.prev = ""
+    //     icons.next = ""
+    //     music_dir = "/home/tobitdsm/Music"
+    // }
+
+    // $music = {
+    //     type = "script"
+    //     class = "play-pause"
+    //     mode = "watch"
+    //     cmd = ""
+    // }
+
+    $music = {
+        type = "custom"
+        bar = [
+            {
+                type = "button"
+                name = "play-pause"
+                class = "play-pause"
+                label = "{{/home/tobitdsm/.config/ironbar/scripts/music}}"
+                on_click = "!playerctl play-pause"
+            }
+        ]
+    }
+
+    $UPower = {
+        type = "upower"
+        format = "{percentage}%"
+    }
+
+    $nm = {
+        type = "network_manager"
+    }
+
+    $SysInfo = {
+        type = "sys_info"
+        interval.temps = 300
+        interval.disks = 300
+        interval.memory = 30
+        interval.cpu = 3
+        interval.networks = 30
+
+        format = [
+            " {cpu_percent}%"
+            " {memory_percent}%"
+            " {temp_c:coretemp-Package-id-0}°C"
+            "󰓢 {net_up@wlo1}/{net_down@wlo1}"
+        ]
+    }
+
+    $cava = {
+        transition_type = "slide_end"
+        transition_duration = 750
+        name = "cava"
+        type = "script"
+        mode = "watch"
+        cmd = "/home/tobitdsm/.config/ironbar/scripts/cava"
+    }
+
+    $volume = {
+        type = "volume"
+        format = "{icon} {percentage}%"
+        max_volume = 100
+        icons.volume_high = " "
+        icons.volume_medium = " "
+        icons.volume_low = " "
+        icons.muted = "󰝟 "
+        on_scroll_down = "wpctl set-volume @DEFAULT_SINK@ 2%- --limit 1"
+        on_scroll_up = "wpctl set-volume @DEFAULT_SINK@ 2%+ --limit 1"
+    }
+
+    
+    $wlogout = {
+        type = "custom"
+        bar = [
+            {
+                type = "button"
+                name = "wlogout"
+                class = "wlogout"
+                label = ""
+                on_click = "!systemctl sleep"
+            }
+        ]
+    }
+
+    $weather = {
+        name = "weather"
+        class = "weather"
+        type = "script"
+        mode = "poll"
+        interval = 600000
+        cmd = "~/.config/ironbar/scripts/weather"
+    }
+
+    $arch = {
+        type = "script"
+        class = "arch"
+        interval = 3600000
+        cmd = "~/.config/ironbar/scripts/arch"
+    }
+
+    $epoch = {
+        type = "script"
+        class = "epoch"
+        interval = 1000
+        cmd = "date +%s | printf %X $(</dev/stdin)"
+    }
+   
+    $start = [ $focused $volume $cava $music ]
+    $center = [ $clock ]
+    $end = [ $epoch $arch $weather $SysInfo $nm $UPower $tray $wlogout ]
+}
+in {
+    icon_theme = "Tela-circle-nord"
+    position = "top"
+    start = $start
+    center = $center
+    end = $end
+}

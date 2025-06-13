@@ -1,0 +1,148 @@
+/* -- BLUEBYT CSS -- */
+
+* {
+    font-family: JetbrainsMono Nerd Font;
+    font-size: 14px;
+    color: #f59a9a;
+}
+
+.start, .end, .sysinfo, .tray, .box, .music *, .upower *, .custom, .network_manager {
+    background-color: transparent;
+}
+
+.cava, .play-pause, .wlogout, .sysinfo .item:nth-child(n), .network_manager, .upower, .tray, .volume, .clock, .focused *, .script {
+    background: #141216;
+    opacity: 0.7;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    box-shadow: rgba(0, 0, 0, 0.288) 2px 2px 5px 2px;
+}
+
+.cava, .play-pause, .script, .wlogout {
+    margin-right: 10px;
+}
+
+.popup, .cava, .play-pause, .wlogout, .sysinfo .item:nth-child(n), .network_manager, .upower, .tray, .volume, .popup-volume button, .clock, .popup-clock .calendar, .focused *, .script, tooltip.background {
+    border-radius: 10px;
+}
+
+.cava, .play-pause, .wlogout, .sysinfo .item:nth-child(n), .network_manager, .upower, .tray, .volume, .focused *, .script {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.wlogout, .sysinfo .item:nth-child(n), .network_manager, .upower, .tray, .volume, .clock, .focused *, .script {
+    padding-left: 10px;
+}
+
+.sysinfo .item:nth-child(n), .network_manager, .upower, .tray, .volume, .clock, .focused *, .script {
+    padding-right: 10px;
+}
+
+.network_manager, .upower, .tray, .clock, .weather, .arch {
+    margin-right: 10px;
+}
+
+.network_manager {
+    margin-left: 11px;
+}
+
+.tray, .weather {
+    margin-left: 0px;
+}
+
+.script {
+    margin-left: 8px;
+}
+
+.volume, .focused *, .clock {
+    margin-left: 10px;
+}
+
+.volume:hover, .volume *:hover, .clock:hover, .clock *:hover, .play-pause:hover, .play-pause *:hover, button:hover {
+    background: #33171d;
+}
+
+.focused *, .volume, .script, .button, .play-pause, .clock, .sysinfo *, .tray, .wlogout, .network_manager {
+    border-top: 1px solid #996b3d;
+    border-left: 1px solid #996b3d;
+    border-bottom: 1px solid #5b4e40;
+    border-right: 1px solid #5b4e40;
+}
+
+.focused *:hover, .volume:hover, .script:hover, .button:hover, .play-pause:hover, .clock:hover {
+    border-top: 1px solid #ffb266;
+    border-left: 1px solid #ffb266;
+    border-bottom: 1px solid #996b6b;
+    border-right: 1px solid #996b6b;
+}
+
+.popup {
+    border: 2px solid #ff6666;
+    background-color: rgba(34, 31, 38, 0.8);
+    padding: 1em;
+}
+
+.cava, .play-pause, .popup-volume {
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.background {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.wlogout {
+    padding-right: 14px;
+}
+
+/* cpu */
+.sysinfo .item:nth-child(1) {
+    color: #64ffff;
+}
+/* memory */
+.sysinfo .item:nth-child(2) {
+    color: #ff7d7d;
+}
+/* temp */
+.sysinfo .item:nth-child(3) {
+    color: #f7bbbb;
+}
+/* net up/down */
+.sysinfo .item:nth-child(4) {
+    color: #6a9e9e;
+}
+
+.popup-volume {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.popup-volume button, .popup-clock .calendar {
+    background-color: rgba(26, 27, 38, 0.8);
+}
+
+.clock {
+    padding-bottom: 3px;
+}
+
+.popup-clock .calendar-clock {
+    font-size: 2em;
+    padding-bottom: 0.1em;
+}
+
+.popup-clock .calendar {
+    font-weight: bolder;
+}
+
+.popup-clock .calendar .header {
+    border-top: 1px solid #424242;
+}
+
+.popup-clock .calendar:selected {
+    background-color: #993d3d;
+}
+
+.epoch, .arch, .volume {
+    margin-right: 2px;
+}

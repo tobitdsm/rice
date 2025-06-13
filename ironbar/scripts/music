@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# Check if any players exist
+if ! playerctl -l 2>/dev/null | grep -q .; then
+    echo "∅"
+    exit 0
+fi
+
+# Get current player status
+STATUS=$(playerctl status 2>/dev/null)
+
+# Determine output based on status
+case "$STATUS" in
+    "Playing")
+        OUTPUT=$(playerctl metadata -f ' {{artist}} - {{title}}' 2>/dev/null)
+        ;;
+    "Paused" | "Stopped")
+        OUTPUT=$(playerctl metadata -f ' {{artist}} - {{title}}' 2>/dev/null)
+        ;;
+    *)
+        OUTPUT="∅"
+        ;;
+esac
+
+# Clean up and shorten output
+echo "$OUTPUT" | sed -uE 's/  - $//;s/  -//;s/- $//;s/(.{49}).{4,}/\1…/'

@@ -1,0 +1,9 @@
+#!/bin/bash
+
+start_timestamp=20139
+
+current_date=$(($(date +%s) / 86400))
+
+diff=$((current_date - start_timestamp))
+
+echo "󰣇 $diff"

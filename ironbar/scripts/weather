@@ -1,0 +1,33 @@
+#!/bin/bash
+
+loc=$(curl ipinfo.io | jq -r .loc)
+
+current=$(curl https://api.open-meteo.com/v1/forecast?latitude="$(cut -d',' -f1 <<< "$loc")"\&longitude="$(cut -d',' -f2 <<< "$loc")"\&current=temperature_2m,weather_code | jq -r .current)
+
+temp=$(echo "$current" | jq -r .temperature_2m)
+
+code=$(echo "$current" | jq -r .weather_code)
+
+if [[ $code -lt 2 ]]; then
+    icon=""
+elif [[ $code -lt 4 ]]; then
+    icon=""
+elif [[ $code -lt 50 ]]; then
+    icon=""
+elif [[ $code -lt 58 ]]; then
+    icon=""
+elif [[ $code -lt 68 ]]; then
+    icon=""
+elif [[ $code -lt 78 ]]; then
+    icon=""
+elif [[ $code -lt 83 ]]; then
+    icon=""
+elif [[ $code -lt 87 ]]; then
+    icon=""
+elif [[ $code -lt 100 ]]; then
+    icon=""
+else
+    icon="" # WMO codes are 0-99, so if this appears, the API returned a faulty code.
+fi
+
+echo "$icon $temp°C"
