@@ -70,6 +70,13 @@
     border-right: 1px solid #5b4e40;
 }
 
+.focused *:hover, .volume:hover, .script:hover, .button:hover, .play-pause:hover, .clock:hover {
+    border-top: 1px solid #ffb266;
+    border-left: 1px solid #ffb266;
+    border-bottom: 1px solid #996b6b;
+    border-right: 1px solid #996b6b;
+}
+
 .popup {
     border: 2px solid #ff6666;
     background-color: rgba(34, 31, 38, 0.8);
