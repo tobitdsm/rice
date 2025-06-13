@@ -1,0 +1,8 @@
+#!/bin/bash
+res="$(curl -s wttr.in/Wachtebeke?format="%c%t\n" | sed -uE 's/ //' | rev | cut -c1- | rev)"
+
+while [[ $res == U* ]]; do
+    res="$(curl -s wttr.in/"$(echo "$res" | cut -d"~" - -f2)"?format="%c%t\n" | sed -uE 's/ //' | rev | cut -c1- | rev)"
+done
+
+echo "$res"
