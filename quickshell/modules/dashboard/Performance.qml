@@ -2,61 +2,97 @@ import "root:/widgets"
 import "root:/services"
 import "root:/config"
 import QtQuick
+import QtQuick.Layouts
 
 StyledRect {
     implicitWidth: root.implicitWidth
     implicitHeight: root.implicitHeight
 
-    radius: Appearance.rounding.small
-    color: Colours.palette.m3surfaceContainer
-
-    Row {
+    GridLayout {
         id: root
 
-        spacing: Appearance.spacing.large * 3
-        padding: Appearance.padding.large
-        leftPadding: padding * 2
-        rightPadding: padding * 3
+        anchors.horizontalCenter: parent.horizontalCenter
 
-        Resource {
-            value1: Math.min(1, SystemUsage.gpuTemp / 90)
-            value2: SystemUsage.gpuPerc
+        columnSpacing: Appearance.spacing.normal
 
-            label1: `${Math.ceil(SystemUsage.gpuTemp)}°C`
-            label2: `${Math.round(SystemUsage.gpuPerc * 100)}%`
+        StyledRect {
+            implicitWidth: res0.implicitWidth * 5 / 4
+            implicitHeight: root.implicitHeight
 
-            sublabel1: qsTr("GPU temp")
-            sublabel2: qsTr("Usage")
+            radius: Appearance.rounding.small
+            color: Colours.palette.m3surfaceContainer
+
+            Resource {
+                id: res0
+
+                anchors.horizontalCenter: parent.horizontalCenter
+                anchors.horizontalCenterOffset: -Appearance.spacing.small
+
+                value1: Math.min(1, SystemUsage.gpuTemp / 90)
+                value2: SystemUsage.gpuPerc
+
+                label1: `${Math.ceil(SystemUsage.gpuTemp)}°C`
+                label2: `${Math.round(SystemUsage.gpuPerc * 100)}%`
+
+                sublabel1: qsTr("GPU temp")
+                sublabel2: qsTr("Usage")
+            }
         }
 
-        Resource {
-            primary: true
+        StyledRect {
+            implicitWidth: res1.implicitWidth * 5 / 4
+            implicitHeight: res1.implicitHeight * 9 / 8
 
-            value1: Math.min(1, SystemUsage.cpuTemp / 90)
-            value2: SystemUsage.cpuPerc
+            radius: Appearance.rounding.small
+            color: Colours.palette.m3surfaceContainer
 
-            label1: `${Math.ceil(SystemUsage.cpuTemp)}°C`
-            label2: `${Math.round(SystemUsage.cpuPerc * 100)}%`
+            Resource {
+                id: res1
 
-            sublabel1: qsTr("CPU temp")
-            sublabel2: qsTr("Usage")
+                anchors.horizontalCenter: parent.horizontalCenter
+                anchors.horizontalCenterOffset: -Appearance.spacing.small
+
+                primary: true
+
+                value1: Math.min(1, SystemUsage.cpuTemp / 90)
+                value2: SystemUsage.cpuPerc
+
+                label1: `${Math.ceil(SystemUsage.cpuTemp)}°C`
+                label2: `${Math.round(SystemUsage.cpuPerc * 100)}%`
+
+                sublabel1: qsTr("CPU temp")
+                sublabel2: qsTr("Usage")
+            }
         }
 
-        Resource {
-            value1: SystemUsage.memPerc
-            value2: SystemUsage.storagePerc
+        StyledRect {
+            implicitWidth: res2.implicitWidth * 4 / 3
+            implicitHeight: root.implicitHeight
 
-            label1: {
-                const fmt = SystemUsage.formatKib(SystemUsage.memUsed);
-                return `${+fmt.value.toFixed(1)}${fmt.unit}`;
-            }
-            label2: {
-                const fmt = SystemUsage.formatKib(SystemUsage.storageUsed);
-                return `${Math.floor(fmt.value)}${fmt.unit}`;
-            }
+            radius: Appearance.rounding.small
+            color: Colours.palette.m3surfaceContainer
 
-            sublabel1: qsTr("Memory")
-            sublabel2: qsTr("Storage")
+            Resource {
+                id: res2
+
+                anchors.horizontalCenter: parent.horizontalCenter
+                anchors.horizontalCenterOffset: -Appearance.spacing.normal
+
+                value1: SystemUsage.memPerc
+                value2: SystemUsage.storagePerc
+
+                label1: {
+                    const fmt = SystemUsage.formatKib(SystemUsage.memUsed);
+                    return `${+fmt.value.toFixed(1)}${fmt.unit}`;
+                }
+                label2: {
+                    const fmt = SystemUsage.formatKib(SystemUsage.storageUsed);
+                    return `${Math.floor(fmt.value)}${fmt.unit}`;
+                }
+
+                sublabel1: qsTr("Memory")
+                sublabel2: qsTr("Storage")
+            }
         }
     }
 
