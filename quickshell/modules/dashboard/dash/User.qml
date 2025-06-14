@@ -17,7 +17,7 @@ Row {
         implicitHeight: info.implicitHeight
 
         radius: Appearance.rounding.large
-        color: Colours.palette.m3surfaceContainerHigh
+        color: Colours.palette.m3primaryContainer
 
         MaterialIcon {
             anchors.centerIn: parent

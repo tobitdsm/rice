@@ -8,8 +8,8 @@ import QtQuick.Controls
 TextField {
     id: root
 
-    color: Colours.palette.m3onSurface
-    placeholderTextColor: Colours.palette.m3outline
+    color: Colours.palette.m3secondary
+    placeholderTextColor: Colours.palette.m3tertiary
     font.family: Appearance.font.family.sans
     font.pointSize: Appearance.font.size.smaller
 

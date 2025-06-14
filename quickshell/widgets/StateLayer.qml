@@ -15,7 +15,7 @@ StyledRect {
 
     anchors.fill: parent
 
-    color: Colours.palette.m3onSurface
+    color: Colours.palette.m3secondary
     opacity: disabled ? 0 : mouse.pressed ? 0.1 : mouse.hovered ? 0.08 : 0
 
     MouseArea {

@@ -142,7 +142,7 @@ Singleton {
     }
 
     function getWeatherIcon(code: string): string {
-        code = ParseInt(code);
+        code = parseInt(code);
         if (code === 0) {
             return "clear_day";
         } else if (code === 1) {
@@ -167,7 +167,7 @@ Singleton {
     }
 
     function getWeatherDescription(code: string): string {
-        code = ParseInt(code);
+        code = parseInt(code);
         if (code === 0) {
             return "Sunny";
         } else if (code === 1) {

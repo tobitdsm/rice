@@ -11,7 +11,7 @@ Column {
     padding: Appearance.padding.large
 
     anchors.verticalCenter: parent.verticalCenter
-    anchors.left: parent.left
+    anchors.right: parent.right
 
     spacing: Appearance.spacing.normal
 

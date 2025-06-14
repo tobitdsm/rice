@@ -88,7 +88,7 @@ Column {
         implicitHeight: SessionConfig.sizes.button
 
         radius: Appearance.rounding.large
-        color: button.activeFocus ? Colours.palette.m3secondaryContainer : Colours.palette.m3surfaceContainer
+        color: button.activeFocus ? Colours.palette.m3primaryContainer : Colours.palette.m3surfaceContainer
 
         Keys.onEnterPressed: proc.startDetached()
         Keys.onReturnPressed: proc.startDetached()
@@ -112,7 +112,7 @@ Column {
             anchors.centerIn: parent
 
             text: button.icon
-            color: button.activeFocus ? Colours.palette.m3onSecondaryContainer : Colours.palette.m3onSurface
+            color: button.activeFocus ? Colours.palette.m3secondary : Colours.palette.m3secondary
             font.pointSize: Appearance.font.size.extraLarge
         }
     }

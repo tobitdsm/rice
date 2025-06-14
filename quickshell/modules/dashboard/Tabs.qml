@@ -84,7 +84,7 @@ Item {
         anchors.right: parent.right
 
         implicitHeight: 1
-        color: Colours.palette.m3outlineVariant
+        color: Colours.palette.m3tertiary
     }
 
     component Tab: TabButton {
@@ -181,7 +181,7 @@ Item {
 
                     anchors.fill: parent
 
-                    color: tab.current ? Colours.palette.m3primary : Colours.palette.m3onSurface
+                    color: tab.current ? Colours.palette.m3primary : Colours.palette.m3secondary
                     opacity: mouse.pressed ? 0.1 : tab.hovered ? 0.08 : 0
 
                     Behavior on opacity {
@@ -193,7 +193,7 @@ Item {
                     id: ripple
 
                     radius: Appearance.rounding.full
-                    color: tab.current ? Colours.palette.m3primary : Colours.palette.m3onSurface
+                    color: tab.current ? Colours.palette.m3primary : Colours.palette.m3secondary
                     opacity: 0
 
                     transform: Translate {
@@ -210,7 +210,7 @@ Item {
                 anchors.bottom: label.top
 
                 text: tab.iconName
-                color: tab.current ? Colours.palette.m3primary : Colours.palette.m3onSurfaceVariant
+                color: tab.current ? Colours.palette.m3primary : Colours.palette.m3secondary
                 fill: tab.current ? 1 : 0
                 font.pointSize: Appearance.font.size.large
 
@@ -230,7 +230,7 @@ Item {
                 anchors.bottom: parent.bottom
 
                 text: tab.text
-                color: tab.current ? Colours.palette.m3primary : Colours.palette.m3onSurfaceVariant
+                color: tab.current ? Colours.palette.m3primary : Colours.palette.m3secondary
             }
 
         }

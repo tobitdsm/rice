@@ -16,19 +16,19 @@ Row {
     Resource {
         icon: "memory"
         value: SystemUsage.cpuPerc
-        colour: Colours.palette.m3primary
+        colour: Colours.palette.m3quaternary
     }
 
     Resource {
         icon: "memory_alt"
         value: SystemUsage.memPerc
-        colour: Colours.palette.m3secondary
+        colour: Colours.palette.m3primary
     }
 
     Resource {
         icon: "hard_disk"
         value: SystemUsage.storagePerc
-        colour: Colours.palette.m3tertiary
+        colour: Colours.palette.m3secondary
     }
 
     component Resource: Item {
@@ -51,7 +51,7 @@ Row {
 
             implicitWidth: DashboardConfig.sizes.resourceProgessThickness
 
-            color: Colours.palette.m3surfaceContainerHigh
+            color: Colours.palette.m3primaryContainer
             radius: Appearance.rounding.full
 
             StyledRect {

@@ -70,7 +70,7 @@ Row {
         property color fg1: Colours.palette.m3primary
         property color fg2: Colours.palette.m3secondary
         property color bg1: Colours.palette.m3primaryContainer
-        property color bg2: Colours.palette.m3secondaryContainer
+        property color bg2: Colours.palette.m3primaryContainer
 
         anchors.verticalCenter: parent.verticalCenter
 
@@ -98,7 +98,7 @@ Row {
                 anchors.horizontalCenter: parent.horizontalCenter
 
                 text: res.sublabel1
-                color: Colours.palette.m3onSurfaceVariant
+                color: Colours.palette.m3secondary
                 font.pointSize: Appearance.font.size.smaller * res.primaryMult
             }
         }
@@ -120,7 +120,7 @@ Row {
                 anchors.horizontalCenter: parent.horizontalCenter
 
                 text: res.sublabel2
-                color: Colours.palette.m3onSurfaceVariant
+                color: Colours.palette.m3secondary
                 font.pointSize: Appearance.font.size.small * res.primaryMult
             }
         }

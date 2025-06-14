@@ -1,6 +1,5 @@
 import "root:/services"
 import "root:/config"
-import "root:/modules/bar/popouts" as BarPopouts
 import "root:/modules/osd" as Osd
 import Quickshell
 import QtQuick
@@ -9,7 +8,6 @@ MouseArea {
     id: root
 
     required property ShellScreen screen
-    required property BarPopouts.Wrapper popouts
     required property PersistentProperties visibilities
     required property Panels panels
     required property Item bar
@@ -40,7 +38,6 @@ MouseArea {
             visibilities.osd = false;
             osdHovered = false;
             visibilities.dashboard = false;
-            popouts.hasCurrent = false;
         }
     }
 
@@ -50,29 +47,8 @@ MouseArea {
         visibilities.osd = showOsd;
         osdHovered = showOsd;
 
-        // Show/hide session on drag
-        if (pressed && withinPanelHeight(panels.session, x, y)) {
-            const dragX = x - dragStart.x;
-            if (dragX < -SessionConfig.dragThreshold)
-                visibilities.session = true;
-            else if (dragX > SessionConfig.dragThreshold)
-                visibilities.session = false;
-        }
-
         // Show dashboard on hover
         visibilities.dashboard = inBottomPanel(panels.dashboard, x, y);
-
-        // Show popouts on hover
-        const popout = panels.popouts;
-        if (x < popout.width) {
-            if (true)
-                // Handle like part of bar
-                bar.checkPopout(y);
-            else
-                // Keep on hover
-                popouts.hasCurrent = withinPanelHeight(popout, x, y);
-        } else
-            popouts.hasCurrent = false;
     }
 
     Osd.Interactions {

@@ -74,7 +74,7 @@ Variants {
             StyledRect {
                 anchors.fill: parent
                 opacity: visibilities.session ? 0.5 : 0
-                color: Colours.palette.m3scrim
+                color: Colours.palette.m3shadow
 
                 Behavior on opacity {
                     NumberAnimation {
@@ -118,7 +118,6 @@ Variants {
 
             Interactions {
                 screen: scope.modelData
-                popouts: panels.popouts
                 visibilities: visibilities
                 panels: panels
                 bar: bar

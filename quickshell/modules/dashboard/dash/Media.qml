@@ -43,7 +43,7 @@ Item {
 
         ShapePath {
             fillColor: "transparent"
-            strokeColor: Colours.palette.m3surfaceContainerHigh
+            strokeColor: Colours.palette.m3primaryContainer
             strokeWidth: DashboardConfig.sizes.mediaProgressThickness
             capStyle: ShapePath.RoundCap
 
@@ -99,14 +99,14 @@ Item {
         anchors.margins: Appearance.padding.large + DashboardConfig.sizes.mediaProgressThickness + Appearance.spacing.small
 
         implicitHeight: width
-        color: Colours.palette.m3surfaceContainerHigh
+        color: Colours.palette.m3primaryContainer
         radius: Appearance.rounding.full
 
         MaterialIcon {
             anchors.centerIn: parent
 
             text: "art_track"
-            color: Colours.palette.m3onSurfaceVariant
+            color: Colours.palette.m3secondary
             font.pointSize: (parent.width * 0.4) || 1
         }
 
@@ -150,7 +150,7 @@ Item {
         animate: true
         horizontalAlignment: Text.AlignHCenter
         text: (Players.active?.trackAlbum ?? qsTr("No media")) || qsTr("Unknown album")
-        color: Colours.palette.m3outline
+        color: Colours.palette.m3tertiary
         font.pointSize: Appearance.font.size.small
 
         width: parent.implicitWidth - Appearance.padding.large * 2
@@ -238,7 +238,7 @@ Item {
 
             animate: true
             text: control.icon
-            color: control.canUse ? Colours.palette.m3onSurface : Colours.palette.m3outline
+            color: control.canUse ? Colours.palette.m3secondary : Colours.palette.m3tertiary
             font.pointSize: Appearance.font.size.large
         }
     }

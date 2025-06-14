@@ -98,7 +98,7 @@
 
 /* cpu */
 .sysinfo .item:nth-child(1) {
-    color: #64ffff;
+    color: #ac82e9;
 }
 /* memory */
 .sysinfo .item:nth-child(2) {

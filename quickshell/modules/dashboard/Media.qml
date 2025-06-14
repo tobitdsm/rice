@@ -67,9 +67,9 @@ Item {
 
         property real rot: 0
 
-        visible: Players.active.isPlaying
+        visible: Players.active?.isPlaying ?? false
 
-        rotation: Players.active.isPlaying ? rot : 0
+        rotation: rot
 
         anchors.fill: cover
         anchors.margins: -DashboardConfig.sizes.mediaVisualiserSize
@@ -96,8 +96,8 @@ Item {
             for (let i = 0; i < len; i++) {
                 const v = Math.max(1, Math.min(100, values[i]));
 
-                const date = new Date()
-                const time = date.getSeconds() + date.getMilliseconds() / 1000
+                const date = new Date();
+                const time = date.getSeconds() + date.getMilliseconds() / 1000;
                 const angle = 2 * Math.PI * i / len;
                 const magnitude = v / 100 * size;
                 const cos = Math.cos(angle);
@@ -123,16 +123,16 @@ Item {
             from: 0
             to: 360
             duration: 60000
-            loops: Animation.infinite
-            running: Players.active.isPlaying
+            loops: Animation.Infinite
+            running: Players.active?.isPlaying ?? false
         }
     }
 
     StyledClippingRect {
+        id: cover
 
         property real rot: 0
-
-        id: cover
+        property int rad: Players.active?.isPlaying ? Appearance.rounding.full : Appearance.rounding.normal
 
         anchors.verticalCenter: parent.verticalCenter
         anchors.left: parent.left
@@ -141,16 +141,16 @@ Item {
         implicitWidth: DashboardConfig.sizes.mediaCoverArtSize
         implicitHeight: DashboardConfig.sizes.mediaCoverArtSize
 
-        color: Colours.palette.m3surfaceContainerHigh
-        radius: Players.active.isPlaying ? Appearance.rounding.full : Appearance.rounding.normal
+        color: Colours.palette.m3primaryContainer
+        radius: rad
 
-        rotation: Players.active.isPlaying ? rot : 0
+        rotation: rot
 
         MaterialIcon {
             anchors.centerIn: parent
 
             text: "art_track"
-            color: Colours.palette.m3onSurfaceVariant
+            color: Colours.palette.m3secondary
             font.pointSize: (parent.width * 0.4) || 1
         }
 
@@ -166,13 +166,38 @@ Item {
             sourceSize.height: height
         }
 
+        Behavior on rad {
+            NumberAnimation {
+                duration: 1000
+                easing.type: Easing.BezierSpline
+            }
+        }
+
         NumberAnimation on rot {
             id: coverRotAnim
             from: 0
             to: 360
             duration: 60000
-            loops: Animation.infinite
-            running: Players.active.isPlaying
+            loops: Animation.Infinite
+            running: Players.active?.isPlaying ?? false
+        }
+
+        NumberAnimation {
+            id: resetRotAnim
+            target: cover
+            properties: "rot"
+            duration: 500
+            easing.type: Easing.InOutQuad
+        }
+        
+        Connections {
+            target: Players.active
+            onIsPlayingChanged: {
+                if (!Players.active?.isPlaying) {
+                    resetRotAnim.to = 0;
+                    resetRotAnim.start();
+                }
+            }
         }
     }
 
@@ -208,7 +233,7 @@ Item {
             animate: true
             horizontalAlignment: Text.AlignHCenter
             text: (Players.active?.trackAlbum ?? qsTr("No media")) || qsTr("Unknown album")
-            color: Colours.palette.m3outline
+            color: Colours.palette.m3tertiary
             font.pointSize: Appearance.font.size.small
 
             width: parent.implicitWidth
@@ -341,7 +366,7 @@ Item {
                 anchors.left: parent.left
 
                 text: root.lengthStr(Players.active?.position ?? -1)
-                color: Colours.palette.m3onSurfaceVariant
+                color: Colours.palette.m3secondary
                 font.pointSize: Appearance.font.size.small
             }
 
@@ -351,7 +376,7 @@ Item {
                 anchors.right: parent.right
 
                 text: root.lengthStr(Players.active?.length ?? -1)
-                color: Colours.palette.m3onSurfaceVariant
+                color: Colours.palette.m3secondary
                 font.pointSize: Appearance.font.size.small
             }
         }
@@ -415,7 +440,7 @@ Item {
 
                     implicitHeight: playersWrapper.implicitHeight + Appearance.padding.small * 2
 
-                    color: Colours.palette.m3secondaryContainer
+                    color: Colours.palette.m3primaryContainer
                     radius: Appearance.rounding.normal
 
                     Item {
@@ -459,7 +484,7 @@ Item {
                                         id: identity
 
                                         text: identityMetrics.elidedText
-                                        color: Colours.palette.m3onSecondaryContainer
+                                        color: Colours.palette.m3secondary
 
                                         TextMetrics {
                                             id: identityMetrics
@@ -517,7 +542,7 @@ Item {
 
                                     animate: true
                                     text: currentIdentityMetrics.elidedText
-                                    color: Colours.palette.m3onSecondaryContainer
+                                    color: Colours.palette.m3secondary
 
                                     TextMetrics {
                                         id: currentIdentityMetrics
@@ -579,7 +604,7 @@ Item {
         StateLayer {
             disabled: !control.canUse
             radius: parent.radius
-            color: control.primary ? Colours.palette.m3onPrimary : Colours.palette.m3onSurface
+            color: control.primary ? Colours.palette.m3surface : Colours.palette.m3secondary
 
             function onClicked(): void {
                 control.onClicked();
@@ -595,7 +620,7 @@ Item {
             animate: true
             fill: control.fill ? 1 : 0
             text: control.icon
-            color: control.canUse ? control.primary ? Colours.palette.m3onPrimary : Colours.palette.m3onSurface : Colours.palette.m3outline
+            color: control.canUse ? control.primary ? Colours.palette.m3surface : Colours.palette.m3secondary : Colours.palette.m3tertiary
             font.pointSize: control.fontSize
         }
     }

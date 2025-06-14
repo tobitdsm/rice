@@ -12,7 +12,7 @@ Item {
     readonly property real nonAnimWidth: view.implicitWidth + viewWrapper.anchors.margins * 2
 
     anchors.horizontalCenter: parent.horizontalCenter
-    anchors.bottom: parent.bottom
+    anchors.top: parent.top
 
     implicitWidth: nonAnimWidth
     implicitHeight: tabs.implicitHeight + tabs.anchors.bottomMargin + view.implicitHeight + viewWrapper.anchors.margins * 2

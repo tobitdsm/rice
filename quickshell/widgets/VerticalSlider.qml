@@ -51,7 +51,7 @@ Slider {
 
             anchors.fill: parent
 
-            color: Colours.alpha(Colours.palette.m3inverseSurface, true)
+            color: Colours.alpha(Colours.palette.m3secondary, true)
             radius: Appearance.rounding.full
 
             MouseArea {
@@ -74,7 +74,7 @@ Slider {
 
                 animate: true
                 text: root.icon
-                color: Colours.palette.m3inverseOnSurface
+                color: Colours.palette.m3surface
                 anchors.centerIn: parent
 
                 Behavior on moving {
