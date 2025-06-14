@@ -88,6 +88,7 @@ Item {
                 }
 
                 Media {
+                    id: media
                     shouldUpdate: visible && this === view.currentItem
                     visibilities: root.visibilities
                 }

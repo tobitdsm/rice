@@ -14,9 +14,7 @@ Singleton {
     property bool showPreview
     property bool endPreviewOnNextChange
     property bool light
-    readonly property Colours palette: showPreview ? preview : current
-    readonly property Colours current: Colours {}
-    readonly property Colours preview: Colours {}
+    readonly property Colours palette: Colours {}
     readonly property Transparency transparency: Transparency {}
 
     function alpha(c: color, layer: bool): color {
@@ -75,11 +73,11 @@ Singleton {
     }
 
     component Colours: QtObject {
+        property color m3shadow: "#000000"
         property color m3surface: "#141216"
         property color m3surfaceContainer: "#201F25"
-        property color m3shadow: "#000000"
-        property color m3primary: "#FF6666"
         property color m3primaryContainer: "#2B292F"
+        property color m3primary: "#FF6666"
         property color m3secondary: "#F59A9A"
         property color m3tertiary: "#996B6B"
         property color m3quaternary: "#AC82E9"

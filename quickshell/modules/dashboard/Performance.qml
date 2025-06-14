@@ -3,53 +3,61 @@ import "root:/services"
 import "root:/config"
 import QtQuick
 
-Row {
-    id: root
+StyledRect {
+    implicitWidth: root.implicitWidth
+    implicitHeight: root.implicitHeight
 
-    spacing: Appearance.spacing.large * 3
-    padding: Appearance.padding.large
-    leftPadding: padding * 2
-    rightPadding: padding * 3
+    radius: Appearance.rounding.small
+    color: Colours.palette.m3surfaceContainer
 
-    Resource {
-        value1: Math.min(1, SystemUsage.gpuTemp / 90)
-        value2: SystemUsage.gpuPerc
+    Row {
+        id: root
 
-        label1: `${Math.ceil(SystemUsage.gpuTemp)}°C`
-        label2: `${Math.round(SystemUsage.gpuPerc * 100)}%`
+        spacing: Appearance.spacing.large * 3
+        padding: Appearance.padding.large
+        leftPadding: padding * 2
+        rightPadding: padding * 3
 
-        sublabel1: qsTr("GPU temp")
-        sublabel2: qsTr("Usage")
-    }
+        Resource {
+            value1: Math.min(1, SystemUsage.gpuTemp / 90)
+            value2: SystemUsage.gpuPerc
 
-    Resource {
-        primary: true
+            label1: `${Math.ceil(SystemUsage.gpuTemp)}°C`
+            label2: `${Math.round(SystemUsage.gpuPerc * 100)}%`
 
-        value1: Math.min(1, SystemUsage.cpuTemp / 90)
-        value2: SystemUsage.cpuPerc
-
-        label1: `${Math.ceil(SystemUsage.cpuTemp)}°C`
-        label2: `${Math.round(SystemUsage.cpuPerc * 100)}%`
-
-        sublabel1: qsTr("CPU temp")
-        sublabel2: qsTr("Usage")
-    }
-
-    Resource {
-        value1: SystemUsage.memPerc
-        value2: SystemUsage.storagePerc
-
-        label1: {
-            const fmt = SystemUsage.formatKib(SystemUsage.memUsed);
-            return `${+fmt.value.toFixed(1)}${fmt.unit}`;
-        }
-        label2: {
-            const fmt = SystemUsage.formatKib(SystemUsage.storageUsed);
-            return `${Math.floor(fmt.value)}${fmt.unit}`;
+            sublabel1: qsTr("GPU temp")
+            sublabel2: qsTr("Usage")
         }
 
-        sublabel1: qsTr("Memory")
-        sublabel2: qsTr("Storage")
+        Resource {
+            primary: true
+
+            value1: Math.min(1, SystemUsage.cpuTemp / 90)
+            value2: SystemUsage.cpuPerc
+
+            label1: `${Math.ceil(SystemUsage.cpuTemp)}°C`
+            label2: `${Math.round(SystemUsage.cpuPerc * 100)}%`
+
+            sublabel1: qsTr("CPU temp")
+            sublabel2: qsTr("Usage")
+        }
+
+        Resource {
+            value1: SystemUsage.memPerc
+            value2: SystemUsage.storagePerc
+
+            label1: {
+                const fmt = SystemUsage.formatKib(SystemUsage.memUsed);
+                return `${+fmt.value.toFixed(1)}${fmt.unit}`;
+            }
+            label2: {
+                const fmt = SystemUsage.formatKib(SystemUsage.storageUsed);
+                return `${Math.floor(fmt.value)}${fmt.unit}`;
+            }
+
+            sublabel1: qsTr("Memory")
+            sublabel2: qsTr("Storage")
+        }
     }
 
     component Resource: Item {

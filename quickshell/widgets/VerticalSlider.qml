@@ -24,7 +24,7 @@ Slider {
             y: root.handle.y
             implicitHeight: parent.height - y
 
-            color: Colours.alpha(Colours.palette.m3secondary, true)
+            color: Colours.alpha(Colours.palette.m3tertiary, true)
             radius: Appearance.rounding.full
         }
     }
