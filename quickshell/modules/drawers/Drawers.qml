@@ -11,17 +11,14 @@ import QtQuick
 import QtQuick.Effects
 
 Variants {
-    model: Quickshell.screens
+    model: [Quickshell.screens[0]] // show only on main monitor
+    // if you want to display on all monitors use this instead:
+    // model: Quickshell.screens
 
     Scope {
         id: scope
 
         required property ShellScreen modelData
-
-        Exclusions {
-            screen: scope.modelData
-            bar: bar
-        }
 
         StyledWindow {
             id: win
