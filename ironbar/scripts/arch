@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# calculates the amount of days i've been using arch
+
 start_timestamp=20139
 
 current_date=$(($(date +%s) / 86400))

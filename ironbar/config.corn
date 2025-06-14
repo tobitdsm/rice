@@ -27,7 +27,7 @@ let {
     //     icons.pause = " "
     //     icons.prev = ""
     //     icons.next = ""
-    //     music_dir = "/home/tobitdsm/Music"
+    //     music_dir = "~/Music"
     // }
 
     // $music = {
@@ -44,7 +44,7 @@ let {
                 type = "button"
                 name = "play-pause"
                 class = "play-pause"
-                label = "{{/home/tobitdsm/.config/ironbar/scripts/music}}"
+                label = "{{~/.config/ironbar/scripts/music}}"
                 on_click = "!playerctl play-pause"
             }
         ]
@@ -81,7 +81,7 @@ let {
         name = "cava"
         type = "script"
         mode = "watch"
-        cmd = "/home/tobitdsm/.config/ironbar/scripts/cava"
+        cmd = "~/.config/ironbar/scripts/cava"
     }
 
     $volume = {
