@@ -1,9 +1,6 @@
 import "root:/widgets"
 import "root:/services"
 import "root:/config"
-import "root:/modules/bar/popouts" as BarPopouts
-import "components"
-import "components/workspaces"
 import Quickshell
 import QtQuick
 
