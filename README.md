@@ -14,7 +14,7 @@ Just for reference, these are the main colors used in the rice.
 <span style="color:#f59a9a">#f59a9a</span> (main accent color)  
 <span style="background:#141216">#141216</span> (main background color)
 
-extra accent colors:
+extra accent colors:  
 <span style="color:#f66">#ff6666</span>  
 <span style="color:#C76C6C">#c76c6c</span>  
 <span style="color:#993d3d">#993d3d</span>  
@@ -25,7 +25,7 @@ extra background colors:
 <span style="background:#504858">#504858</span>  
 <span style="background:#a090b0">#a090b0</span>
 
-other colors:
+other colors:  
 <span style="background:#2b2135">#2b2135</span>  
 <span style="color:#64ffff">#64ffff</span>  
 <span style="color:#79fc64">#79fc64</span>  
