@@ -1,0 +1,22 @@
+{
+  "name": "tobitdsm-rice",
+  "displayName": "tobitdsm rice theme",
+  "description": "A theme included in the rice made by tobitdsm.",
+  "repository": "https://github.com/tobitdsm/rice",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.101.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "tobitdsm rice theme",
+        "uiTheme": "vs-dark",
+        "path": "./themes/tobitdsm-rice-theme-color-theme.json"
+      }
+    ]
+  }
+}
