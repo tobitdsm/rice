@@ -40,13 +40,13 @@ A lot of these colors come from the [retro-futuristic rice](https://github.com/d
 
 ## Installation guide
 ### Full installation
-If you want to install this rice, and keep updated with my edits, you can clone this repository as follows. This setup is from a guide from [atlassian](https://www.atlassian.com/git/tutorials/dotfiles)
+If you want to install this rice, and keep updated with my edits, you can clone this repository as follows. This setup is from a guide from [atlassian](https://www.atlassian.com/git/tutorials/dotfiles).
 
-1. Add the following alias to your `.bashrc` or `.zshrc` file:
+1. Add the following line to your `.bashrc` or `.zshrc` file:
 ```bash
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME/.config/'
 ```
-This way you can manage these dotfiles from anywhere.
+This way you can manage these dotfiles from anywhere.  
 2. Now you can clone the repository as follows:
 ```bash
 git clone --bare https://github.com/tobitdsm/rice $HOME/.cfg
@@ -69,7 +69,7 @@ If you wish to only install the rice for some of the apps, you can download the 
 Please do read the [guides for all relevant apps](#app-by-app-categories), as there are some that require additional setup.
 
 ## App-by-app categories
-In this section I will go over each app, and list where I drew my inspirations from, the tools I used to create this specific part, and maybe some additional setup requirements.
+In this section I will go over each app, and list where I drew my inspirations from, the tools I used to create any parts, and maybe some additional setup requirements.
 ### BetterDiscord
 [Installation](https://betterdiscord.app/)  
 The theme I created is based on a theme that apparently doesn't exist anymore, with some additional edits made with [bdeditor](https://bdeditor.dev/). I used the [discord recolor](https://bdeditor.dev/theme/discordrecolor) theme by DevilBro as my base.
@@ -79,7 +79,7 @@ https://github.com/tobitdsm/rice/blob/main/BetterDiscord/themes/tobitdsm-rice.th
 
 ### Firefox
 [Installation](https://addons.mozilla.org/en-US/firefox/addon/firefox-color/)  
-This part has no files in this repository, but i did create a theme for firefox. You can find it [here](https://color.firefox.com/?theme=XQAAAAKCBAAAAAAAAABBqYhm849SCicxcUhA3DJozHnOMuotJJHsei94VjnaKzYAmRnTKRdrN8Xt1Z94zxuyBJi2-pXmGsL3Puqw7t2TbhVJGEHomTgwfjkihoH6ur7c3GSIpxBl47_UbiH27J0Sl5EbbIPOLxqhsldz6VMRkLzFAQFM97o4HX0s2_wkpq2D3HMVagsiT8dFS6cltWk89iITePANf60AJUAdfGT-e4ACbXR4_RXRszwcmoHtf43Jk_9Saigkin3wdlMoclJMRkh9Pi8X9ZDIghKDYaaR0HLpAWVpjHhceS1S9lz5LS_Tmv4KE9Zu12rRY8pl2A63rFpdkvX4INB1dB6-Q8obiyM28CA0jS3-kjpZEB5YzPGgqh4nkjYGQqO_x-oWM0QqxNMOEHrxJUP_t26sd-dBySHP_hS8kmOZgldE3FDyiokJHhcqImbaYcQP2hZh6xSHqyjj5nCX6k4G9L7d4-fKKfi7XZvYyRqDc6wSBjNG6dfoF3Q1zzuwas8Z6ZeTj5otV1K1Ut0xMDWMYdoIQpIaDYhGs7KeiuaL2RU5Jg2c__cz-1k).
+This part has no files in this repository, but i did create a theme for firefox color. You can find it [here](https://color.firefox.com/?theme=XQAAAAKCBAAAAAAAAABBqYhm849SCicxcUhA3DJozHnOMuotJJHsei94VjnaKzYAmRnTKRdrN8Xt1Z94zxuyBJi2-pXmGsL3Puqw7t2TbhVJGEHomTgwfjkihoH6ur7c3GSIpxBl47_UbiH27J0Sl5EbbIPOLxqhsldz6VMRkLzFAQFM97o4HX0s2_wkpq2D3HMVagsiT8dFS6cltWk89iITePANf60AJUAdfGT-e4ACbXR4_RXRszwcmoHtf43Jk_9Saigkin3wdlMoclJMRkh9Pi8X9ZDIghKDYaaR0HLpAWVpjHhceS1S9lz5LS_Tmv4KE9Zu12rRY8pl2A63rFpdkvX4INB1dB6-Q8obiyM28CA0jS3-kjpZEB5YzPGgqh4nkjYGQqO_x-oWM0QqxNMOEHrxJUP_t26sd-dBySHP_hS8kmOZgldE3FDyiokJHhcqImbaYcQP2hZh6xSHqyjj5nCX6k4G9L7d4-fKKfi7XZvYyRqDc6wSBjNG6dfoF3Q1zzuwas8Z6ZeTj5otV1K1Ut0xMDWMYdoIQpIaDYhGs7KeiuaL2RU5Jg2c__cz-1k).
 
 ### GTK
 This part is split into two, because creating a gtk4 theme is a pain in the ass.
@@ -109,7 +109,7 @@ Within `hyprland.conf`, a lot of the other apps are started. Make sure to commen
 #### Hyprpaper
 [Installation](https://wiki.hypr.land/Hypr-Ecosystem/hyprpaper/)  
 To prevent copyright issues, my wallpaper is not in this repository. It is the album cover of [Sleep Token's](https://en.wikipedia.org/wiki/Sleep_Token) latest album, [Even In Arcadia](https://sleeptoken.lnk.to/EvenInArcadia). If you don't know them, please check them out.  
-Apart from their music being a great inspiration for me, this album cover was the main inspiration for this rice, as it was already my wallpaper when I started making it.
+Apart from their music being a big inspiration for me, this album cover was the main inspiration for this rice, as it was already my wallpaper when I started making it.
 #### Hypridle
 [Installation](https://wiki.hypr.land/Hypr-Ecosystem/hypridle/)  
 There is not much to say here. You can tweak the timeouts if you don't like them.
@@ -122,7 +122,7 @@ Hypridle requires Hyprlock (or at least in my setup), so I do recommend installi
 [Installation](https://wiki.hypr.land/Hypr-Ecosystem/hyprlock/)  
 Again not much to say here, aside from the fact that it expects a profile picture at `~/Pictures/me.jpg`.
 
-### ironbar
+### Ironbar
 [Installation](https://github.com/JakeStanger/ironbar)  
 Extra dependencies:
 - [pipewire](https://www.pipewire.org/) or [pulseaudio](https://wiki.archlinux.org/title/PulseAudio)
@@ -135,6 +135,6 @@ My configuration was heavily inspired by the [wayfire rice](https://github.com/b
 
 I start ironbar at startup through Hyprland (see `hypr/hyprland.conf`). Note the reload 5 seconds after launching, this is to fix a weird startup issue where the cava element would be frozen.
 
-On a side note: one of the elements on the bar displays the number of days I have been using arch. You can edit the `ironbar/scripts/arch.sh` to show your own day count, or remove the `$arch` element from the `ironbar/config.corn` altogether.
+On a side note: one of the elements on the bar displays the number of days I have been using arch. You can edit `ironbar/scripts/arch` to show your own day count, or remove the `$arch` element from `ironbar/config.corn` altogether.
 
 ### kitty
