@@ -28,7 +28,7 @@ extra background colors:
 other colors:
 <span style="background:#2b2135">#2b2135</span>  
 <span style="color:#64ffff">#64ffff</span>  
-<span style="color:#79fc64">#79fc64</span>
+<span style="color:#79fc64">#79fc64</span>  
 <span style="color:#ffff66">#ffff66</span>  
 <span style="color:#5bb0ff">#5bb0ff</span>  
 <span style="color:#AC82E9">#ac82e9</span>  
