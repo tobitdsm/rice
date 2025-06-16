@@ -15,25 +15,25 @@ Just for reference, these are the main colors used in the rice.
 <span style="background:#141216">#141216</span> (main background color)
 
 extra accent colors:
-<span style="color:#f66">#ff6666</span>
-<span style="color:#C76C6C">#c76c6c</span>
-<span style="color:#993d3d">#993d3d</span>
+<span style="color:#f66">#ff6666</span>  
+<span style="color:#C76C6C">#c76c6c</span>  
+<span style="color:#993d3d">#993d3d</span>  
 
 extra background colors:  
-<span style="background:#282432">#282432</span>
-<span style="background:#3c3642">#3c3642</span>
-<span style="background:#504858">#504858</span>
+<span style="background:#282432">#282432</span>  
+<span style="background:#3c3642">#3c3642</span>  
+<span style="background:#504858">#504858</span>  
 <span style="background:#a090b0">#a090b0</span>
 
 other colors:
-<span style="background:#2b2135">#2b2135</span>
-<span style="color:#64ffff">#64ffff</span>
+<span style="background:#2b2135">#2b2135</span>  
+<span style="color:#64ffff">#64ffff</span>  
 <span style="color:#79fc64">#79fc64</span>
-<span style="color:#ffff66">#ffff66</span>
-<span style="color:#5bb0ff">#5bb0ff</span>
-<span style="color:#AC82E9">#ac82e9</span>
-<span style="color:#8F56E1">#8f56e1</span>
-<span style="color:#fc7fff">#fc7fff</span>
+<span style="color:#ffff66">#ffff66</span>  
+<span style="color:#5bb0ff">#5bb0ff</span>  
+<span style="color:#AC82E9">#ac82e9</span>  
+<span style="color:#8F56E1">#8f56e1</span>  
+<span style="color:#fc7fff">#fc7fff</span>  
 <span style="color:#ffb266">#ffb266</span>
 
 A lot of these colors come from the [retro-futuristic rice](https://github.com/diinki/diinki-retrofuture/tree/main) by diinky.
