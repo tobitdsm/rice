@@ -5,25 +5,45 @@
  * @version 0.0.1
  */
 
+@import url('https://mwittrien.github.io/BetterDiscordAddons/Themes/DiscordRecolor/DiscordRecolor.css');
+
 :root {
+    --accentcolor: 245, 154, 154;
+    --accentcolor2: 255, 102, 102;
+    --linkcolor: 153, 61, 61;
+    --mentioncolor: 255, 102, 102;
+    --textbrightest: 245, 154, 154;
+    --textbrighter: 212, 138, 141;
+    --textbright: 185, 185, 185;
+    --textdark: 140, 140, 140;
+    --textdarker: 115, 115, 115;
+    --textdarkest: 80, 80, 80;
+    --backgroundaccent: 80, 72, 88;
+    --backgroundprimary: 20, 18, 22;
+    --backgroundsecondary: 20, 18, 22;
+    --backgroundsecondaryalt: 20, 18, 22;
+    --backgroundtertiary: 20, 18, 22;
+    --backgroundfloating: 20, 18, 22;
+    --settingsicons: 1;
     --font-primary: 'Karla', sans-serif;
     --font-display: var(--font-primary) !important;
-    --background-primary: #141216;
-    --background-secondary: #141216;
-    --background-tertiary: #141216;
 
     /* VARIABLES */
     --home-image: url('https://i.imgur.com/fwmLFRM.gif');
     --background-solid: #141216;
     --background-solid-light: #282432;
     --background-solid-lighter: #504858;
-    --accent: 245, 154, 154; /* #f59a9a */
-    --accent-alt: 255, 102, 102; /* #ff6666 */
-    --md-black: 20, 18, 22; /* #141216 */
-    --dm-white: 255, 102, 102; /* #ff6666 */
+    
+    --accent: 245, 154, 154;
+    /* #f59a9a */
+    --accent-alt: 255, 102, 102;
+    /* #ff6666 */
+    --md-black: 20, 18, 22;
+    /* #141216 */
+    --dm-white: 255, 102, 102;
+    /* #ff6666 */
 
     /* SUBST VARS */
-    --accentcolor: var(--accent);
     --vaccentcolor-hover: rgb(var(--accent));
     --vaccentcolor-active: rgb(var(--accent));
 }
@@ -91,7 +111,7 @@ div[class*="userProfile"][class*="unThemed"].theme-light {
 }
 
 /* Titlebar */
- 
+
 div[class*="typeWindows-"] {
     --background-modifier-hover: rgba(var(--dm-white), 1);
     --background-modifier-active: rgba(var(--dm-white), 0.075);
@@ -124,13 +144,14 @@ div[class*="typeWindows-"]::after {
 }
 
 /* GUILDS (SERVERS) */
- 
+
 nav[class*="guilds-"] {
     background: transparent;
 }
+
 ul[data-list-id='guildsnav'] {
     --background-secondary: var(--background-solid);
-        --background-primary: rgba(var(--dm-white), 0.1);
+    --background-primary: rgba(var(--dm-white), 0.1);
     margin-bottom: 70px;
     background-color: rgba(var(--md-black), 0.6);
     border-right: 1px solid rgba(var(--md-black), 0.2);
@@ -173,7 +194,7 @@ span[class^="expandedFolderBackground-"] {
 }
 
 .wrapper-28eC3z,
-[data-list-id='guildsnav'] [data-dnd-name] > div,
+[data-list-id='guildsnav'] [data-dnd-name]>div,
 [data-list-id='guildsnav'] svg[width="48"] {
     width: 45px;
     height: 45px;
@@ -208,7 +229,7 @@ div[data-list-item-id="guildsnav___guild-discover-button"]:hover {
 }
 
 /* SIDEBAR */
- 
+
 .platform-win [class^="sidebar-"] {
     border-radius: 0;
     background-color: transparent;
@@ -246,6 +267,7 @@ div[class^='nowPlayingColumn'] {
     --background-primary: rgba(var(--md-black), 0.5);
     --background-modifier-hover: rgba(var(--dm-white), 0.075);
 }
+
 div[class^="members-"] div[class^="member-"] {
     background-color: transparent;
 }
@@ -255,7 +277,7 @@ div[class^="members-"] div[class^="member-"] {
 }
 
 /* SIDEBAR HEADER */
- 
+
 nav[aria-label]>div>header {
     display: flex;
     flex-direction: column;
@@ -266,7 +288,7 @@ nav[aria-label]>div>header {
 }
 
 /* OUTER CONTAINERS */
- 
+
 body {
     background: var(--background-image) center/cover no-repeat;
 }
@@ -283,10 +305,12 @@ body {
     --background-secondary: rgba(var(--md-black), 0.7);
     background-color: rgba(var(--md-black), 0.4);
 }
+
 div[class^="notAppAsidePanel-"]>div[class^="app-"]>div[class^="app-"],
 div[class^="app-"]>div[class^="bg-"] {
     background-color: transparent;
 }
+
 div[class*="baseLayer-"]>div[class^="container-"] {
     background-color: rgb(var(--md-black), 0.4);
 }
@@ -298,7 +322,7 @@ nav+div[class^='base-'] {
     max-width: calc(100% - 72px);
 }
 
-nav+div[class^='base-'] > div[class^="notice"] {
+nav+div[class^='base-']>div[class^="notice"] {
     border-radius: 0;
 }
 
@@ -318,7 +342,7 @@ section[class*="themed-"] {
 }
 
 /* HEADER */
- 
+
 section[class*="themed-"] {
     height: 54px;
     box-shadow: var(--elevation-low);
@@ -355,7 +379,7 @@ section div[class^="toolbar"]>div[role][class*="selected-"] {
 }
 
 /* PANELS */
- 
+
 div[class^='sidebar-']>section {
     --background-primary: rgba(var(--dm-white), 0.07);
     --background-secondary: rgba(var(--dm-white), 0.1);
@@ -373,12 +397,13 @@ div[class^='sidebar-']>section>div:last-child {
     left: -72px;
     bottom: 0;
 }
+
 div[class^="sidebar-"]>section>div:last-child [class^="avatarWrapper-"] {
     flex: 1;
 }
 
 /* CONTENT */
- 
+
 div[class^='chat'] {
     --background-floating: rgba(var(--dm-white), 0.5);
     background: transparent;
@@ -466,7 +491,7 @@ div[class*="barBase-"] {
 }
 
 /* Codeblocks */
- 
+
 html pre {
     border-radius: 0;
     background: transparent;
@@ -489,7 +514,7 @@ html code.inline {
 }
 
 /* SETTINGS */
- 
+
 div[aria-label*="_SETTINGS"],
 div[aria-label*="_DEBUG"] {
     --background-primary: transparent;
@@ -533,7 +558,7 @@ div[class^="sidebar"]+[class^="pageWrapper"] {
 }
 
 /* CRASH PAGE */
- 
+
 div[class*="errorPage"] {
     --background-secondary: rgba(var(--md-black), 0.7) !important;
 }
@@ -559,7 +584,7 @@ button[class*="button-"][class*="color"],
 }
 
 /* Context Menu */
- 
+
 div[role="menuitem"] {
     --vaccentcolor: var(--accent-alt);
 }
@@ -569,7 +594,7 @@ div[role="menuitem"]:active {
 }
 
 /* These use hardcoded colors, no need to bother with strange selectors */
- 
+
 #app-mount .footer-2gL1pp,
 #app-mount .footer-3mqk7D {
     background-color: var(--background-secondary);
@@ -701,7 +726,7 @@ div[data-list-id^="members-"]>div {
 }
 
 /* LOGIN PAGE */
- 
+
 div[class^="splashBackground"] canvas,
 div[class^="splashBackground"] img {
     display: none;
