@@ -30,3 +30,4 @@ color15              #f59a9a
 #a090b0
 #993d3d
 #ffb266
+#C76C6C
