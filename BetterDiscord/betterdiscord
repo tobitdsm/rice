@@ -1,0 +1,33 @@
+#!/bin/bash
+
+n=0
+
+if [[ $# -gt 0 ]]; then
+    if [[ $1 == "no-update" ]]; then
+        echo "Automatically skipping Discord update timeout..."
+        n=1
+    else
+        echo "usage: betterdiscord [no-update]"
+        exit 1
+    fi
+fi
+
+echo "Updating BetterDiscord..."
+betterdiscordctl self-upgrade
+nohup discord --enable-features=UseOzonePlatform --ozone-platform=wayland > /dev/null 2>&1 &    # fork this process from the terminal, so the script can continue execution
+echo "Waiting for Discord to update, press enter to continue..."
+if [[ $n -eq 1 ]]; then
+    echo "Automatically skipping wait..."
+elif read -t 30 -r; then
+    echo "Skipping wait..."
+else
+    echo "Timeout reached..."
+fi
+echo "Reinstalling BetterDiscord..."
+betterdiscordctl install
+echo "Closing all Discord instances..."
+killall discord     # restarting discord
+echo "Restarting Discord..."
+nohup discord --enable-features=UseOzonePlatform --ozone-platform=wayland > /dev/null 2>&1 &    # fork this process from the terminal, so the script can continue execution
+echo "Exiting..."
+kill -9 $(ps -o ppid= -p $$)    # kill the terminal in which the script is executed
