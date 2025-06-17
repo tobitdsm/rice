@@ -1,5 +1,7 @@
 # rice dotfiles
 
+![images/rice2.jpg](https://github.com/tobitdsm/rice/blob/main/images/rice2.png)
+
 ## Table of Contents
 - [Introduction](#introduction)
 - [Color scheme](#color-scheme)
