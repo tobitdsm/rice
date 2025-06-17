@@ -1,4 +1,33 @@
 # rice dotfiles
+
+## Table of Contents
+- [Introduction](#introduction)
+- [Color scheme](#color-scheme)
+- [Installation guide](#installation-guide)
+	- [Full installation](#full-installation)
+	- [Partial installation](#partial-installation)
+- [App-by-app categories](#app-by-app-categories)
+	- [BetterDiscord](#betterdiscord)
+	- [Firefox](#firefox)
+	- [GTK](#gtk)
+		- [GTK3](#gtk3)
+		- [GTK4](#gtk4)
+	- [GRUB](#grub)
+	- [Hypr](#hypr)
+		- [Hyprland](#hyprland)
+		- [Hyprpaper](#hyprpaper)
+		- [Hypridle](#hypridle)
+		- [Hyprlock](#hyprlock)
+	- [Ironbar](#ironbar)
+	- [kitty](#kitty)
+	- [Neofetch](#neofetch)
+	- [Quickshell](#quickshell)
+	- [Spicetify](#spicetify)
+	- [VS Code](#vs-code)
+	- [Wofi](#wofi)
+- [Outro](#outro)
+	- [Inspirations](#inspirations)
+
 ## Introduction
 This rice was made by me, with much [inspiration](#inspirations) from others. All of them are linked in their respective [categories](#app-by-app-categories) where I took their inspiration from.
 
@@ -140,7 +169,7 @@ Hypridle requires Hyprlock (or at least in my setup), so I do recommend installi
 [Installation](https://wiki.hypr.land/Hypr-Ecosystem/hyprlock/)  
 Again not much to say here, aside from the fact that it expects a profile picture at `~/Pictures/me.jpg`.
 
-### ironbar
+### Ironbar
 [Installation](https://github.com/JakeStanger/ironbar)  
 Extra dependencies:
 - [pipewire](https://www.pipewire.org/) or [pulseaudio](https://wiki.archlinux.org/title/PulseAudio)
@@ -160,11 +189,11 @@ On a side note: one of the elements on the bar displays the number of days I hav
 Because this is the default terminal emulator shipped with Hyprland, and because it is very customizable, I just stuck with it.  
 Because this configuration is mainly colors, the biggest inspiration was again the [retro-futuristic rice](https://github.com/diinki/diinki-retrofuture) by diinki.
 
-### neofetch
+### Neofetch
 [Installation](https://github.com/dylanaraps/neofetch)  
 Again, not much to say here. Just note that the config uses a custom ascii logo stored in logo.asc, which I made a scaled-up version of the default arch linux logo. You can edit this if you want.
 
-### quickshell
+### Quickshell
 [Installation](https://quickshell.outfoxxed.me/)  
 Extra dependencies:
 - [cava](https://github.com/karlstav/cava)
@@ -183,7 +212,7 @@ model: [Quickshell.screens[0]] // show only on main monitor
     // model: Quickshell.screens
 ```
 
-### spicetify
+### Spicetify
 [Installation](https://spicetify.app/)  
 Again, not much to say here, this should work out of the box.
 
@@ -203,7 +232,7 @@ You can then enable the theme by going into your vscode settings and searching f
 
 This theme was created using [Theme Studio for VS Code](https://themes.vscode.one/), with some edits made inside vscode itself afterwards, because some identifiers seemed to be a little bit outdated.
 
-### wofi
+### Wofi
 [Installation](https://github.com/SimplyCEO/wofi)  
 This configuration was again inspired by the [retro-futuristic rice](https://github.com/diinki/diinki-retrofuture) by diinki.
 
