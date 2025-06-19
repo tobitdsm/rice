@@ -179,6 +179,14 @@ Extra dependencies:
 - [playerctl](https://github.com/altdesktop/playerctl)
 - [NetworkManager](https://www.networkmanager.dev/)
 - [upower](https://gitlab.freedesktop.org/upower/upower)
+- Any [nerd font](https://www.nerdfonts.com) (to display the icons)
+You need to edit the `ironbar/style.css` file to match your font:
+```css
+* {
+    font-family: JetBrains Mono NF;
+    ...
+}
+```
 
 My configuration was heavily inspired by the [wayfire rice](https://github.com/bluebyt/Wayfire-dots) by bluebyt.
 
