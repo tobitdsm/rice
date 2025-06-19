@@ -200,6 +200,9 @@ Again, not much to say here. Just note that the config uses a custom ascii logo 
 Extra dependencies:
 - [cava](https://github.com/karlstav/cava)
 - [playerctl](https://github.com/altdesktop/playerctl)
+- [Material Symbols font](https://fonts.google.com/icons)
+- [IBM Plex Sans font](https://www.ibm.com/plex/) (optional - this will be replaced by your default sans font if not installed)
+- [JetBrains Mono Nerd font](https://www.jetbrains.com/lp/mono/) (optional - this will be replaced by your default monospace font if not installed)
 
 This configuration is based on [caelestia](https://github.com/caelestia-dots/shell) by soramane.
 
