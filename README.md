@@ -103,7 +103,7 @@ Please do read the [guides for all relevant apps](#app-by-app-categories), as th
 ## App-by-app categories
 In this section I will go over each app, and list where I drew my inspirations from, the tools I used to create any parts, and maybe some additional setup requirements.
 ### BetterDiscord
-[Installation](https://betterdiscord.app/)  
+[Installation](https://betterdiscord.app/) / [AUR](https://aur.archlinux.org/packages/betterdiscordctl)  
 The theme I created was made with [bdeditor](https://bdeditor.dev/). I used the [discord recolor](https://bdeditor.dev/theme/discordrecolor) theme by DevilBro as my base.
 
 I wrote a simple startup script for bash, to use it just make a symbolic link like this:
@@ -143,16 +143,16 @@ Because I didn't want to look into how you create a GRUB theme, I just installed
 ### Hypr
 As mentioned before, I use [Hyprland](https://hypr.land/) as my wm/de. Alongside it, I use many [hypr-ecosystem](https://wiki.hypr.land/Hypr-Ecosystem/) apps. I will shortly go over them.
 #### Hyprland
-[Installation](https://wiki.hypr.land/Getting-Started/Installation/)  
+[Installation](https://wiki.hypr.land/Getting-Started/Installation/) / [Arch package](https://archlinux.org/packages/extra/x86_64/hyprland/)  
 Within `hyprland.conf`, a lot of the other apps are started. Make sure to comment out the ones you don't want to use to prevent errors.
 #### Hyprpaper
-[Installation](https://wiki.hypr.land/Hypr-Ecosystem/hyprpaper/)  
+[Installation](https://wiki.hypr.land/Hypr-Ecosystem/hyprpaper/) / [Arch package](https://archlinux.org/packages/extra/x86_64/hyprpaper/)  
 To prevent copyright issues, my wallpaper is not in this repository. It is the album cover of [Sleep Token's](https://en.wikipedia.org/wiki/Sleep_Token) latest album, [Even In Arcadia](https://sleeptoken.lnk.to/EvenInArcadia). If you don't know them, please check them out.  
 Apart from their music being a big inspiration for me, this album cover was the main inspiration for this rice, as it was already my wallpaper when I started making it.
 
 Worship.
 #### Hypridle
-[Installation](https://wiki.hypr.land/Hypr-Ecosystem/hypridle/)  
+[Installation](https://wiki.hypr.land/Hypr-Ecosystem/hypridle/) / [Arch package](https://archlinux.org/packages/extra/x86_64/hypridle/)  
 There is not much to say here. You can tweak the timeouts if you don't like them.
 
 If you don't have a keyboard backlight, you can remove this section to improve performance and prevent errors.
@@ -168,11 +168,11 @@ See the [wiki](https://wiki.archlinux.org/title/Keyboard_backlight) on how to ge
 
 Hypridle requires Hyprlock (or at least in my setup), so I do recommend installing them both.
 #### Hyprlock
-[Installation](https://wiki.hypr.land/Hypr-Ecosystem/hyprlock/)  
+[Installation](https://wiki.hypr.land/Hypr-Ecosystem/hyprlock/) / [Arch package](https://archlinux.org/packages/extra/x86_64/hyprlock/)  
 Again not much to say here, aside from the fact that it expects a profile picture at `~/Pictures/me.jpg`.
 
 ### Ironbar
-[Installation](https://github.com/JakeStanger/ironbar)  
+[Installation](https://github.com/JakeStanger/ironbar) / [AUR](https://aur.archlinux.org/packages/ironbar-git)  
 Extra dependencies:
 - [pipewire](https://www.pipewire.org/) or [pulseaudio](https://wiki.archlinux.org/title/PulseAudio)
 - [cava](https://github.com/karlstav/cava)
@@ -195,16 +195,16 @@ I start ironbar at startup through Hyprland (see `hypr/hyprland.conf`). Note the
 On a side note: one of the elements on the bar displays the number of days I have been using arch. You can edit `ironbar/scripts/arch` to show your own day count, or remove the `$arch` element from `ironbar/config.corn` altogether.
 
 ### kitty
-[Installation](https://github.com/kovidgoyal/kitty)  
+[Installation](https://github.com/kovidgoyal/kitty) / [Arch package](https://archlinux.org/packages/extra/x86_64/kitty/)  
 Because this is the default terminal emulator shipped with Hyprland, and because it is very customizable, I just stuck with it.  
 Because this configuration is mainly colors, the biggest inspiration was again the [retro-futuristic rice](https://github.com/diinki/diinki-retrofuture) by diinki.
 
 ### Neofetch
-[Installation](https://github.com/dylanaraps/neofetch)  
+[Installation](https://github.com/dylanaraps/neofetch) / [AUR](https://aur.archlinux.org/packages/neofetch)  
 Again, not much to say here. Just note that the config uses a custom ascii logo stored in logo.asc, which I made a scaled-up version of the default arch linux logo. You can edit this if you want.
 
 ### Quickshell
-[Installation](https://quickshell.outfoxxed.me/)  
+[Installation](https://quickshell.outfoxxed.me/) / [AUR](https://aur.archlinux.org/packages/quickshell)  
 Extra dependencies:
 - [cava](https://github.com/karlstav/cava)
 - [playerctl](https://github.com/altdesktop/playerctl)
@@ -226,7 +226,7 @@ model: [Quickshell.screens[0]] // show only on main monitor
 ```
 
 ### Spicetify
-[Installation](https://spicetify.app/)  
+[Installation](https://spicetify.app/) / [AUR](https://aur.archlinux.org/packages/spicetify-cli)  
 Again, not much to say here, this should work out of the box.
 
 Side note: I disabled the "now playing" sidepane-view because I don't like it. If you want to re-enable it, just remove this part:
@@ -246,7 +246,7 @@ You can then enable the theme by going into your vscode settings and searching f
 This theme was created using [Theme Studio for VS Code](https://themes.vscode.one/), with some edits made inside vscode itself afterwards, because some identifiers seemed to be a little bit outdated.
 
 ### Wofi
-[Installation](https://github.com/SimplyCEO/wofi)  
+[Installation](https://github.com/SimplyCEO/wofi) / [Arch package](https://archlinux.org/packages/extra/x86_64/wofi/)  
 This configuration was again inspired by the [retro-futuristic rice](https://github.com/diinki/diinki-retrofuture) by diinki.
 
 ## Outro
