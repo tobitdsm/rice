@@ -143,26 +143,26 @@ Singleton {
 
     function getWeatherIcon(code: string): string {
         code = parseInt(code);
-        if (code === 0) {
+        if (code < 2) {
             return "clear_day";
-        } else if (code === 1) {
+        } else if (code < 4) {
             return "partly_cloudy_day";
-        } else if (code === 2) {
-            return "cloud";
         } else if (code < 50) {
-            return "foggy";
+            return "";
+        } else if (code < 58) {
+            return "";
         } else if (code < 68) {
-            return "rainy";
+            return "";
         } else if (code < 78) {
-            return "snowing";
+            return "";
         } else if (code < 83) {
-            return "cloudy_snowing";
+            return "";
         } else if (code < 87) {
-            return "rainy";
+            return "";
         } else if (code < 100) {
-            return "thunderstorm";
+            return "";
         } else {
-            return "air";
+            return "" // WMO codes are 0-99, so if this appears, the API returned a faulty code.
         }
     }
 

@@ -3,6 +3,7 @@ pragma Singleton
 import "root:/utils"
 import Quickshell
 import Quickshell.Io
+import QtQuick
 
 Singleton {
     id: root
@@ -10,6 +11,10 @@ Singleton {
     property string icon
     property string description
     property real temperature
+
+    property int code
+
+    property string descriptions
 
     function reload(): void {
         wttrProc.running = true;
@@ -19,14 +24,54 @@ Singleton {
         id: wttrProc
 
         running: true
-        command: [`bash`, `-c`, `loc=$(curl ipinfo.io | jq -r '.loc'); curl https://api.open-meteo.com/v1/forecast?latitude="$(cut -d',' -f1 <<< "$loc")"\&longitude="$(cut -d',' -f2 <<< "$loc")"\&current=temperature_2m,weather_code | jq -r .current | jq -c '{code: .weather_code, temp: .temperature_2m}'`]
+        command: [`bash`, `-c`, `~/.config/quickshell/utils/scripts/weather.sh`]
         stdout: SplitParser {
             onRead: data => {
                 const json = JSON.parse(data);
-                console.log(json);
-                root.icon = Icons.getWeatherIcon(json.code);
-                root.description = Icons.getWeatherDescription(json.code);
-                root.temperature = parseFloat(json.temp);
+                root.code = json.code;
+                root.temperature = Math.round(json.temp);
+
+                // var process = new QProcess;
+                // process.start("cat", ["~/.config/quickshell/services/weather-descriptions.json"]);
+
+                // var xhr = new XMLHttpRequest;
+                // xhr.open("GET", "~/.config/quickshell/services/weather-descriptions.json");
+                // xhr.onreadystatechange = function () {
+                //     if (xhr.readyState === XMLHttpRequest.DONE) {
+                //         var response = xhr.responseText;
+                //         console.log(response);
+                //     }
+                // };
+                // xhr.send();
+            }
+        }
+
+        onExited: {
+            wttrProc2.running = true;
+        }
+    }
+
+    Process {
+        id: wttrProc2
+
+        running: false
+        command: [`bash`, `-c`, `cat ~/.config/quickshell/services/weather-descriptions.json`]
+        stdout: SplitParser {
+            onRead: line => {
+                root.descriptions += line + "\n";
+            }
+        }
+
+        onExited: {
+            const json = JSON.parse(root.descriptions);
+            const info = json[root.code.toString()];
+            const hour = (new Date()).getHours();
+            if (hour >= 6 && hour < 18) {
+                root.icon = info.day.image;
+                root.description = info.day.description;
+            } else {
+                root.icon = info.night.image;
+                root.description = info.night.description;
             }
         }
     }

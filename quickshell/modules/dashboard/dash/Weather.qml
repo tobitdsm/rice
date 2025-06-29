@@ -16,19 +16,27 @@ Item {
             Weather.reload();
     }
 
-    MaterialIcon {
+    // MaterialIcon {
+    //     id: icon
+
+    //     anchors.verticalCenter: parent.verticalCenter
+    //     anchors.left: parent.left
+
+    //     animate: true
+    //     text: Weather.icon || "partly_cloudy_day" // "cloud_alert"
+    //     color: Colours.palette.m3secondary
+    //     font.pointSize: Appearance.font.size.extraLarge * 2
+    //     font.variableAxes: ({
+    //             opsz: Appearance.font.size.extraLarge * 1.2
+    //         })
+    // }
+
+    Image {
         id: icon
+        source: Weather.icon || "http://openweathermap.org/img/wn/01d@2x.png"
 
         anchors.verticalCenter: parent.verticalCenter
         anchors.left: parent.left
-
-        animate: true
-        text: Weather.icon || "cloud_alert"
-        color: Colours.palette.m3secondary
-        font.pointSize: Appearance.font.size.extraLarge * 2
-        font.variableAxes: ({
-                opsz: Appearance.font.size.extraLarge * 1.2
-            })
     }
 
     Column {
@@ -54,7 +62,7 @@ Item {
             anchors.horizontalCenter: parent.horizontalCenter
 
             animate: true
-            text: Weather.description || qsTr("No weather")
+            text: Weather.description || qsTr("No info")
 
             elide: Text.ElideRight
             width: Math.min(implicitWidth, root.parent.width - icon.implicitWidth - info.anchors.leftMargin - Appearance.padding.large * 2)
