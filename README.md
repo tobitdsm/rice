@@ -57,7 +57,6 @@ extra background colors:
 ![](https://placehold.co/15x15/a090b0/a090b0.png) <span style="background:#a090b0">#a090b0</span>
 
 other colors:  
-![](https://placehold.co/15x15/2b2135/2b2135.png) <span style="background:#2b2135">#2b2135</span>  
 ![](https://placehold.co/15x15/64ffff/64ffff.png) <span style="color:#64ffff">#64ffff</span>  
 ![](https://placehold.co/15x15/79fc64/79fc64.png) <span style="color:#79fc64">#79fc64</span>  
 ![](https://placehold.co/15x15/ffff66/ffff66.png) <span style="color:#ffff66">#ffff66</span>  
