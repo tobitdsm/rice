@@ -54,6 +54,10 @@ Singleton {
     Process {
         id: wttrProc2
 
+        onStarted: {
+            root.descriptions = "";
+        }
+
         running: false
         command: [`bash`, `-c`, `cat ~/.config/quickshell/services/weather-descriptions.json`]
         stdout: SplitParser {

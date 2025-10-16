@@ -2,7 +2,7 @@ let {
     $tray = { type = "tray" }
     $clock = {
         type = "clock"
-        format = " %B %d  %H:%M"
+        format = " %d %B  %H:%M"
     }
 
     $focused = {
@@ -13,7 +13,7 @@ let {
         icon_theme = "Tela-circle-nord"
 
         truncate.mode = "end"
-        truncate.max_length = 25
+        truncate.max_length = 22
     }
 
     // $music = {
@@ -51,7 +51,7 @@ let {
     }
 
     $UPower = {
-        type = "upower"
+        type = "battery"
         format = "{percentage}%"
     }
 

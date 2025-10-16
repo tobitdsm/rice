@@ -25,8 +25,8 @@ MouseArea {
     }
 
     function inBottomPanel(panel: Item, x: real, y: real): bool {
-        const panelX = panel.x;
-        return y > panel.y - BorderConfig.thickness && x >= panelX - BorderConfig.rounding && x <= panelX + panel.width + BorderConfig.rounding;
+        const panelX = BorderConfig.thickness + panel.x;
+        return y > 1200 - panel.height - BorderConfig.thickness && x >= panelX - BorderConfig.rounding && x <= panelX + panel.width + BorderConfig.rounding;
     }
 
     anchors.fill: parent

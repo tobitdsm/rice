@@ -1,0 +1,53 @@
+* {
+    font: "Segoe UI 12";
+    background-color: transparent;
+    text-color: #f59a9a;
+}
+
+window {
+    background-color: #141216CC; /* CC = opacity ≃80% */
+    border: 2px solid;
+    border-color: #ff6666;
+    border-radius: 14px;
+    padding: 12px;
+    width: 1000px;
+    height: 600px;
+}
+
+mainbox {
+    padding: 12px;
+}
+
+inputbar {
+    background-color: #0000;
+    border: 0px;
+    padding: 12px;
+    margin: 8px;
+    text-color: #f59a9a;
+}
+
+prompt {
+    text-color: #f59a9a;
+}
+
+entry {
+    padding: 6px;
+    margin: 0px 12px 8px 12px;
+    border-radius: 12px;
+}
+
+element {
+    padding: 6px;
+    border: 0px;
+}
+
+element selected {
+    background-color: #27232b;
+    font-weight: bold;
+    text-color: #f59a9a;
+}
+
+element-icon {
+    size: 24px;
+    margin: 0px 6px 0px 4px;
+}

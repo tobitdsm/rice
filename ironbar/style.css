@@ -4,11 +4,11 @@
     color: #f59a9a;
 }
 
-.start, .end, .sysinfo, .tray, .box, .music *, .upower *, .custom, .network_manager {
+.start, .end, .sysinfo, .tray, .box, .music *, .battery *, .custom, .network_manager {
     background-color: transparent;
 }
 
-.cava, .play-pause, .wlogout, .sysinfo .item:nth-child(n), .network_manager, .upower, .tray, .volume, .clock, .focused *, .script {
+.cava, .play-pause, .wlogout, .sysinfo .item:nth-child(n), .network_manager, .battery, .tray, .volume, .clock, .focused *, .script {
     background: #141216;
     opacity: 0.7;
     margin-top: 5px;
@@ -20,24 +20,24 @@
     margin-right: 10px;
 }
 
-.popup, .cava, .play-pause, .wlogout, .sysinfo .item:nth-child(n), .network_manager, .upower, .tray, .volume, .popup-volume button, .clock, .popup-clock .calendar, .focused *, .script, tooltip.background {
+.popup, .cava, .play-pause, .wlogout, .sysinfo .item:nth-child(n), .network_manager, .battery, .tray, .volume, .popup-volume button, .clock, .popup-clock .calendar, .focused *, .script, tooltip.background {
     border-radius: 10px;
 }
 
-.cava, .play-pause, .wlogout, .sysinfo .item:nth-child(n), .network_manager, .upower, .tray, .volume, .focused *, .script {
+.cava, .play-pause, .wlogout, .sysinfo .item:nth-child(n), .network_manager, .battery, .tray, .volume, .focused *, .script {
     padding-top: 0px;
     padding-bottom: 0px;
 }
 
-.wlogout, .sysinfo .item:nth-child(n), .network_manager, .upower, .tray, .volume, .clock, .focused *, .script {
+.wlogout, .sysinfo .item:nth-child(n), .network_manager, .battery, .tray, .volume, .clock, .focused *, .script {
     padding-left: 10px;
 }
 
-.sysinfo .item:nth-child(n), .network_manager, .upower, .tray, .volume, .clock, .focused *, .script {
+.sysinfo .item:nth-child(n), .network_manager, .battery, .tray, .volume, .clock, .focused *, .script {
     padding-right: 10px;
 }
 
-.network_manager, .upower, .tray, .clock, .weather, .arch {
+.network_manager, .battery, .tray, .clock, .weather, .arch {
     margin-right: 10px;
 }
 
