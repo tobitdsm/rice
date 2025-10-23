@@ -4,8 +4,9 @@
     color: #f59a9a;
 }
 
-.start, .end, .sysinfo, .tray, .box, .music *, .battery *, .custom, .network_manager {
+.start, .end, .sysinfo, .tray *, .box, .music *, .battery *, .custom, .network_manager {
     background-color: transparent;
+    border: none;
 }
 
 .cava, .play-pause, .wlogout, .sysinfo .item:nth-child(n), .network_manager, .battery, .tray, .volume, .clock, .focused *, .script {
