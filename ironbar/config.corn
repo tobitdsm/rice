@@ -104,8 +104,8 @@ let {
                 type = "button"
                 name = "wlogout"
                 class = "wlogout"
-                label = ""
-                on_click = "!systemctl sleep"
+                label = "logout"
+                on_click = "!hyprlock"
             }
         ]
     }

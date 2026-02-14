@@ -4,6 +4,10 @@
     color: #f59a9a;
 }
 
+.tray, .battery {
+    transition: 0.25s;
+}
+
 .start, .end, .sysinfo, .tray *, .box, .music *, .battery *, .custom, .network_manager {
     background-color: transparent;
     border: none;
@@ -58,7 +62,7 @@
     margin-left: 10px;
 }
 
-.volume:hover, .volume *:hover, .clock:hover, .clock *:hover, .play-pause:hover, .play-pause *:hover, button:hover {
+.volume:hover, .tray:hover, .volume *:hover, .clock:hover, .clock *:hover, .play-pause:hover, .play-pause *:hover, button *:hover, .custom * *:hover, .battery:hover {
     background: #33171d;
 }
 
@@ -69,7 +73,7 @@
     border-right: 1px solid #5b4e40;
 }
 
-.focused *:hover, .volume:hover, .script:hover, .button:hover, .play-pause:hover, .clock:hover {
+.volume:hover, .button:hover, .play-pause:hover, .clock:hover, .wlogout:hover, .tray:hover {
     border-top: 1px solid #ffb266;
     border-left: 1px solid #ffb266;
     border-bottom: 1px solid #996b6b;
@@ -92,7 +96,13 @@
 }
 
 .wlogout {
-    padding-right: 14px;
+    padding-right: 7px;
+    padding-top: 2px;
+}
+
+.wlogout * {
+    font-family: Material Symbols Rounded;
+    font-weight: bold;
 }
 
 /* cpu */

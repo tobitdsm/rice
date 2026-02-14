@@ -23,4 +23,4 @@ case "$STATUS" in
 esac
 
 # Clean up and shorten output
-echo "$OUTPUT" | sed -uE 's/  - $//;s/  -//;s/- $//;s/(.{49}).{4,}/\1…/'
+echo "$OUTPUT" | sed -uE 's/  - $//;s/  -//;s/- $//;s/(.{44}).{4,}/\1…/'
