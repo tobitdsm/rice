@@ -212,7 +212,11 @@ Item {
                         target: Players.active
                         function onIsPlayingChanged(): void {
                             if (!Players.active?.isPlaying) {
-                                resetRotAnim.to = 0;
+                                if (cover.rot > 180) {
+                                    resetRotAnim.to = 360;
+                                } else {
+                                    resetRotAnim.to = 0;
+                                }
                                 resetRotAnim.start();
                             }
                         }
