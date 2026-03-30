@@ -1,13 +1,12 @@
 #!/bin/bash
 
-n=0
+n=1
 
 if [[ $# -gt 0 ]]; then
-    if [[ $1 == "no-update" ]]; then
-        echo "Automatically skipping Discord update timeout..."
-        n=1
+    if [[ $1 == "update" ]]; then
+        n=0
     else
-        echo "usage: betterdiscord [no-update]"
+        echo "usage: betterdiscord [update]"
         exit 1
     fi
 fi
