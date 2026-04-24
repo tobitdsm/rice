@@ -114,10 +114,11 @@ Now you can launch discord by executing `betterdiscord` in the terminal.
 The script will:
 - try to update betterdiscord
 - launch discord
-- wait for discord to update (this can be skipped by executing `betterdiscord no-update` or by pressing enter when the script is waiting)
 - reinstall betterdiscord
 - relaunch discord
 - close the terminal in which the script was running
+
+You can also run `betterdiscord update`, which introduces a wait time after launching discord so it has time to update. This wait time can be skipped by pressing enter in the terminal.
 
 ### Firefox
 This part has no files in this repository, but i did create a theme for [firefox color](https://addons.mozilla.org/en-US/firefox/addon/firefox-color/). You can find it [here](https://color.firefox.com/?theme=XQAAAAKCBAAAAAAAAABBqYhm849SCicxcUhA3DJozHnOMuotJJHsei94VjnaKzYAmRnTKRdrN8Xt1Z94zxuyBJi2-pXmGsL3Puqw7t2TbhVJGEHomTgwfjkihoH6ur7c3GSIpxBl47_UbiH27J0Sl5EbbIPOLxqhsldz6VMRkLzFAQFM97o4HX0s2_wkpq2D3HMVagsiT8dFS6cltWk89iITePANf60AJUAdfGT-e4ACbXR4_RXRszwcmoHtf43Jk_9Saigkin3wdlMoclJMRkh9Pi8X9ZDIghKDYaaR0HLpAWVpjHhceS1S9lz5LS_Tmv4KE9Zu12rRY8pl2A63rFpdkvX4INB1dB6-Q8obiyM28CA0jS3-kjpZEB5YzPGgqh4nkjYGQqO_x-oWM0QqxNMOEHrxJUP_t26sd-dBySHP_hS8kmOZgldE3FDyiokJHhcqImbaYcQP2hZh6xSHqyjj5nCX6k4G9L7d4-fKKfi7XZvYyRqDc6wSBjNG6dfoF3Q1zzuwas8Z6ZeTj5otV1K1Ut0xMDWMYdoIQpIaDYhGs7KeiuaL2RU5Jg2c__cz-1k).
