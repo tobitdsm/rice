@@ -62,10 +62,6 @@
     margin-left: 10px;
 }
 
-.volume:hover, .tray:hover, .volume *:hover, .clock:hover, .clock *:hover, .play-pause:hover, .play-pause *:hover, button *:hover, .custom * *:hover, .battery:hover {
-    background: #33171d;
-}
-
 .focused *, .volume, .script, .button, .play-pause, .clock, .sysinfo *, .tray, .wlogout, .network_manager {
     border-top: 1px solid #996b3d;
     border-left: 1px solid #996b3d;
