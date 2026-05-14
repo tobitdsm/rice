@@ -69,6 +69,7 @@ hl.on("hyprland.start", function ()
   hl.exec_cmd("poweralertd")    -- start poweralerts
   hl.exec_cmd(terminal .. " -e bash -ic \"mirror; update\"")  -- check for updates on launch (i am forgetful) - replace update with your pkgman update cmd
   hl.exec_cmd("hyprlax --config ~/.config/hyprlax/config.toml") -- start hyprlax background manager
+  hl.exec_cmd("sleep 2; hyprctl reload")    -- fix monitor setup issue
 end)
 
 hl.on("config.reloaded", function ()
@@ -301,7 +302,7 @@ local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
 hl.bind(mainMod .. " + T", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + C", hl.dsp.window.close())
-hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
+hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown --post-cmd 'shutdown now' || hyprctl dispatch 'hl.dsp.exit()' && shutdown now"))
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd(mail))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
@@ -313,7 +314,7 @@ hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("swaync-client -t")) -- open notification centre
 hl.bind("SHIFT + CTRL + ESCAPE", hl.dsp.exec_cmd(taskManager))
 hl.bind(mainMod .. " + SHIFT + CTRL + ALT + L", hl.dsp.exec_cmd("firefox --new-window linkedin.com"))   -- hell yeah
-hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd("reboot"))
+hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown --post-cmd 'reboot' || hyprctl dispatch 'hl.dsp.exit()' && reboot"))
 hl.bind(mainMod .. " + SHIFT + H", hl.dsp.exec_cmd("systemctl hibernate"))
 hl.bind(mainMod .. " + F", hl.dsp.exec_cmd("firefox"))
 hl.bind(mainMod .. " + SHIFT + P", hl.dsp.exec_cmd("firefox --private-window"))
