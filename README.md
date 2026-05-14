@@ -151,7 +151,7 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 As mentioned before, I use [Hyprland](https://hypr.land/) as my wm/de. Alongside it, I use many [hypr-ecosystem](https://wiki.hypr.land/Hypr-Ecosystem/) apps. I will shortly go over them.
 #### Hyprland
 [Installation](https://wiki.hypr.land/Getting-Started/Installation/) / [Arch package](https://archlinux.org/packages/extra/x86_64/hyprland/)  
-Within `hyprland.conf`, a lot of the other apps are started. Make sure to comment out the ones you don't want to use to prevent errors.
+Within `hyprland.lua`, a lot of the other apps are started. Make sure to comment out the ones you don't want to use to prevent errors.
 #### Hyprpaper
 [Installation](https://wiki.hypr.land/Hypr-Ecosystem/hyprpaper/) / [Arch package](https://archlinux.org/packages/extra/x86_64/hyprpaper/)  
 To prevent copyright issues, my wallpaper is not in this repository. It is the album cover of [Sleep Token's](https://en.wikipedia.org/wiki/Sleep_Token) latest album, [Even In Arcadia](https://sleeptoken.lnk.to/EvenInArcadia). If you don't know them, please check them out.  
@@ -197,7 +197,7 @@ You need to edit the `ironbar/style.css` file to match your font:
 
 My configuration was heavily inspired by the [wayfire rice](https://github.com/bluebyt/Wayfire-dots) by bluebyt.
 
-I start ironbar at startup through Hyprland (see `hypr/hyprland.conf`). Note the reload 5 seconds after launching, this is to fix a weird startup issue where the cava element would be frozen.
+I start ironbar at startup through Hyprland (see `hypr/hyprland.lua`). Note the reload 5 seconds after launching, this is to fix a weird startup issue where the cava element would be frozen.
 
 On a side note: one of the elements on the bar displays the number of days I have been using arch. You can edit `ironbar/scripts/arch` to show your own day count, or remove the `$arch` element from `ironbar/config.corn` altogether.
 
@@ -221,7 +221,7 @@ Extra dependencies:
 
 This configuration is based on [caelestia](https://github.com/caelestia-dots/shell) by soramane.
 
-I start quickshell at startup through Hyprland (see `hypr/hyprland.conf`). Note the delay of 5 seconds after launching, this is to fix a weird startup issue where cava would not work.
+I start quickshell at startup through Hyprland (see `hypr/hyprland.lua`). Note the delay of 5 seconds after launching, this is to fix a weird startup issue where cava would not work.
 
 The launch script is written for [fish](https://fishshell.com/) instead of bash, so you will probably need to install it.
 
