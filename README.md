@@ -140,7 +140,7 @@ Make sure you also have the gtk-4.0 folder installed for this to work!
 ### GRUB
 After you downloaded this theme, you just need to add it to your GRUB config. Edit your grub configuration file, usually `/etc/default/grub`, find the `GRUB_THEME` line, and set it to:
 ```config
-GRUB_THEME="/home/tobitdsm/.config/grub/theme.txt"
+GRUB_THEME="/home/<user>/.config/grub/theme.txt"
 ```
 Then, regenerate your grub config, e.g. by running:
 ```bash
