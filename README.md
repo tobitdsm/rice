@@ -138,7 +138,14 @@ As I said, creating a gtk4 theme is a pain in the ass. That's why I use [Catppuc
 Make sure you also have the gtk-4.0 folder installed for this to work!
 
 ### GRUB
-Because I didn't want to look into how you create a GRUB theme, I just installed the [catppuccin](https://github.com/catppuccin/grub) theme for grub.
+After you downloaded this theme, you just need to add it to your GRUB config. Edit your grub configuration file, usually `/etc/default/grub`, find the `GRUB_THEME` line, and set it to:
+```config
+GRUB_THEME="/home/tobitdsm/.config/grub/theme.txt"
+```
+Then, regenerate your grub config, e.g. by running:
+```bash
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+```
 
 ### Hypr
 As mentioned before, I use [Hyprland](https://hypr.land/) as my wm/de. Alongside it, I use many [hypr-ecosystem](https://wiki.hypr.land/Hypr-Ecosystem/) apps. I will shortly go over them.
