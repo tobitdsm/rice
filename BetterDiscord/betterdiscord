@@ -12,7 +12,7 @@ if [[ $# -gt 0 ]]; then
 fi
 
 echo "Updating BetterDiscord..."
-sudo npm i -g @betterdiscord/cli
+bdcli update || update bdcli
 nohup discord --enable-features=UseOzonePlatform --ozone-platform=wayland > /dev/null 2>&1 &    # fork this process from the terminal, so the script can continue execution
 echo "Waiting for Discord to update, press enter to continue..."
 if [[ $n -eq 1 ]]; then
