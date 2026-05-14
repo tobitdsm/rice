@@ -102,7 +102,7 @@ Please do read the [guides for all relevant apps](#app-by-app-categories), as th
 ## App-by-app categories
 In this section I will go over each app, and list where I drew my inspirations from, the tools I used to create any parts, and maybe some additional setup requirements.
 ### BetterDiscord
-[Installation](https://betterdiscord.app/) / [AUR](https://aur.archlinux.org/packages/betterdiscordctl)  
+[Installation](https://docs.betterdiscord.app/users/getting-started/installation#command-line-installation) / [AUR](https://aur.archlinux.org/packages/bdcli-bin)  
 The theme I created was made with [bdeditor](https://bdeditor.dev/). I used the [discord recolor](https://bdeditor.dev/theme/discordrecolor) theme by DevilBro as my base.
 
 I wrote a simple startup script for bash, to use it just make a symbolic link like this:
