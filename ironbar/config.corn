@@ -52,11 +52,133 @@ let {
 
     $UPower = {
         type = "battery"
-        format = "{percentage}%"
+        format = "󱉝 {percentage}%"
+        show_icon = false
+        profiles = {
+            bat_full = {
+                when = { percent = 100 charging = false }
+                format = "󰁹 {percentage}%"
+            }
+            bat_90 = {
+                when = { percent = 93 charging = false }
+                format = "󰂂 {percentage}%"
+            }
+            bat_80 = {
+                when = { percent = 90 charging = false }
+                format = "󰂁 {percentage}%"
+            }
+            bat_70 = {
+                when = { percent = 80 charging = false }
+                format = "󰂀 {percentage}%"
+            }
+            bat_60 = {
+                when = { percent = 70 charging = false }
+                format = "󰁿 {percentage}%"
+            }
+            bat_50 = {
+                when = { percent = 60 charging = false }
+                format = "󰁾 {percentage}%"
+            }
+            bat_40 = {
+                when = { percent = 50 charging = false }
+                format = "󰁽 {percentage}%"
+            }
+            bat_30 = {
+                when = { percent = 40 charging = false }
+                format = "󰁼 {percentage}%"
+            }
+            bat_20 = {
+                when = { percent = 30 charging = false }
+                format = "󰁻 {percentage}%"
+            }
+            bat_10 = {
+                when = { percent = 20 charging = false }
+                format = "󰁺 {percentage}%"
+            }
+            bat_critical = {
+                when = { percent = 5 charging = false }
+                format = "󱃍 {percentage}%"
+            }
+            bat_charging_full = {
+                when = { charging = true percent = 100 }
+                format = "󰂅 {percentage}%"
+            }
+            bat_charging_90 = {
+                when = { charging = true percent = 93 }
+                format = "󰂋 {percentage}%"
+            }
+            bat_charging_80 = {
+                when = { charging = true percent = 90 }
+                format = "󰂊 {percentage}%"
+            }
+            bat_charging_70 = {
+                when = { charging = true percent = 80 }
+                format = "󰢞 {percentage}%"
+            }
+            bat_charging_60 = {
+                when = { charging = true percent = 70 }
+                format = "󰂉 {percentage}%"
+            }
+            bat_charging_50 = {
+                when = { charging = true percent = 60 }
+                format = "󰢝 {percentage}%"
+            }
+            bat_charging_40 = {
+                when = { charging = true percent = 50 }
+                format = "󰂈 {percentage}%"
+            }
+            bat_charging_30 = {
+                when = { charging = true percent = 40 }
+                format = "󰂇 {percentage}%"
+            }
+            bat_charging_20 = {
+                when = { charging = true percent = 30 }
+                format = "󰂆 {percentage}%"
+            }
+            bat_charging_10 = {
+                when = { charging = true percent = 20 }
+                format = "󰢜 {percentage}%"
+            }
+            bat_charging_critical = {
+                when = { charging = true percent = 5 }
+                format = "󰢟 {percentage}%"
+            }
+        }
     }
 
     $nm = {
         type = "network_manager"
+        interface_whitelist = [ "wlo1" ]
+        profiles = {
+            wifi_disconnected = {
+                when = { type = "wifi" state = "disconnected" }
+                icon = "󰖪"
+            }
+            wifi_acquiring = {
+                when = { type = "wifi" state = "acquiring" }
+                icon = "󱛇"
+            }
+            wifi_connected_none = {
+                when = { type = "wifi" state = "connected" signal_strength = 20 }
+                icon = "󰤯"
+            }
+            wifi_connected_weak = {
+                when = { type = "wifi" state = "connected" signal_strength = 40 }
+                icon = "󰤟"
+            }
+            wifi_connected_ok = {
+                when = { type = "wifi" state = "connected" signal_strength = 50 }
+                icon = "󰤢"
+            }
+            wifi_connected_good = {
+                when = { type = "wifi" state = "connected" signal_strength = 80 }
+                icon = "󰤥"
+            }
+            wifi_connected_excellent = {
+                when = { type = "wifi" state = "connected" signal_strength = 100 }
+                icon = "󰤨"
+            }
+        }
     }
 
     $SysInfo = {
