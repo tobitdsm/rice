@@ -29,7 +29,7 @@ StyledRect {
                 anchors.horizontalCenterOffset: -Appearance.spacing.small
 
                 value1: Math.min(1, SystemUsage.thermal / 103)
-                value2: SystemUsage.fanSpeed / 5500 // replace this with your max rpm
+                value2: SystemUsage.fanSpeed / 5600 // replace this with your max rpm
 
                 label1: `${Math.ceil(SystemUsage.thermal)}°C`
                 label2: `${SystemUsage.fanSpeed}`
