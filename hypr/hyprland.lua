@@ -67,7 +67,7 @@ hl.on("hyprland.start", function ()
   hl.exec_cmd("sleep 5; killall cava; ironbar reload; ~/.config/quickshell/run.fish")   -- fix startup issue + kill cava to reduce processor usage + start quickshell with delay to fix cava issues
   hl.exec_cmd("brightnessctl -d asus::kbd_backlight s 1")   -- enable keyboard backlight
   hl.exec_cmd("poweralertd")    -- start poweralerts
-  hl.exec_cmd(terminal .. " -e bash -ic \"mirror; update\"")  -- check for updates on launch (i am forgetful) - replace update with your pkgman update cmd
+  hl.exec_cmd(terminal .. " -e bash -ic \"mirror; limit update\"")  -- check for updates on launch (i am forgetful) - replace update with your pkgman update cmd; limit is a custom command i wrote to limit the cpu usage to 50%
   hl.exec_cmd("hyprlax --config ~/.config/hyprlax/config.toml") -- start hyprlax background manager
   hl.exec_cmd("sleep 2; hyprctl reload")    -- fix monitor setup issue
 end)
@@ -339,6 +339,9 @@ for i = 1, 10 do
     hl.bind(mainMod .. " + " .. key,             hl.dsp.focus({ workspace = i}))
     hl.bind(mainMod .. " + SHIFT + " .. key,     hl.dsp.window.move({ workspace = i }))
 end
+
+hl.bind(mainMod .. " + SHIFT + left",  hl.dsp.window.move({ workspace = "e-1" }))
+hl.bind(mainMod .. " + SHIFT + right", hl.dsp.window.move({ workspace = "e+1" }))
 
 -- Example special workspace (scratchpad)
 hl.bind(mainMod .. " + S",         hl.dsp.workspace.toggle_special("magic"))
