@@ -28,14 +28,14 @@ StyledRect {
                 anchors.horizontalCenter: parent.horizontalCenter
                 anchors.horizontalCenterOffset: -Appearance.spacing.small
 
-                value1: Math.min(1, SystemUsage.gpuTemp / 90)
-                value2: SystemUsage.gpuPerc
+                value1: Math.min(1, SystemUsage.thermal / 103)
+                value2: SystemUsage.fanSpeed / 5500 // replace this with your max rpm
 
-                label1: `${Math.ceil(SystemUsage.gpuTemp)}°C`
-                label2: `${Math.round(SystemUsage.gpuPerc * 100)}%`
+                label1: `${Math.ceil(SystemUsage.thermal)}°C`
+                label2: `${SystemUsage.fanSpeed}`
 
-                sublabel1: qsTr("GPU temp")
-                sublabel2: qsTr("Usage")
+                sublabel1: qsTr("Thermal")
+                sublabel2: qsTr("RPM")
             }
         }
 
@@ -54,7 +54,7 @@ StyledRect {
 
                 primary: true
 
-                value1: Math.min(1, SystemUsage.cpuTemp / 90)
+                value1: Math.min(1, SystemUsage.cpuTemp / 100)
                 value2: SystemUsage.cpuPerc
 
                 label1: `${Math.ceil(SystemUsage.cpuTemp)}°C`

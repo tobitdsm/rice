@@ -11,6 +11,9 @@ Singleton {
     property real cpuTemp
     property real gpuPerc
     property real gpuTemp
+    property real thermal
+    property int battery
+    property int fanSpeed
     property int memUsed
     property int memTotal
     readonly property real memPerc: memTotal > 0 ? memUsed / memTotal : 0
@@ -56,8 +59,11 @@ Singleton {
             meminfo.reload();
             storage.running = true;
             cpuTemp.running = true;
-            gpuUsage.running = true;
-            gpuTemp.running = true;
+            // gpuUsage.running = true;
+            // gpuTemp.running = true;
+            thermal.running = true;
+            // battery.running = true;
+            fanSpeed.running = true;
         }
     }
 
@@ -148,45 +154,81 @@ Singleton {
         }
     }
 
+    // Process {
+    //     id: gpuUsage
+
+    //     running: true
+    //     command: ["sh", "-c", "cat /sys/class/drm/card*/device/gpu_busy_percent"]
+    //     stdout: SplitParser {
+    //         splitMarker: ""
+    //         onRead: data => {
+    //             const percs = data.trim().split("\n");
+    //             const sum = percs.reduce((acc, d) => acc + parseInt(d, 10), 0);
+    //             root.gpuPerc = sum / percs.length / 100;
+    //         }
+    //     }
+    // }
+
+    // Process {
+    //     id: gpuTemp
+
+    //     running: true
+    //     command: ["sh", "-c", "sensors | jq -nRc '[inputs]'"]
+    //     stdout: SplitParser {
+    //         onRead: data => {
+    //             let eligible = false;
+    //             let sum = 0;
+    //             let count = 0;
+    //             for (const line of JSON.parse(data)) {
+    //                 if (line === "Adapter: PCI adapter")
+    //                     eligible = true;
+    //                 else if (line === "")
+    //                     eligible = false;
+    //                 else if (eligible) {
+    //                     const match = line.match(/^(temp[0-9]+|GPU core|edge)+:\s+\+([0-9]+\.[0-9]+)°C/);
+    //                     if (match) {
+    //                         sum += parseFloat(match[2]);
+    //                         count++;
+    //                     }
+    //                 }
+    //             }
+    //             root.gpuTemp = count > 0 ? sum / count : 0;
+    //         }
+    //     }
+    // }
+
     Process {
-        id: gpuUsage
+        id: thermal
 
         running: true
-        command: ["sh", "-c", "cat /sys/class/drm/card*/device/gpu_busy_percent"]
+        command: ["sh", "-c", "acpi -t | cut -d\" \" -f 4"]
         stdout: SplitParser {
-            splitMarker: ""
             onRead: data => {
-                const percs = data.trim().split("\n");
-                const sum = percs.reduce((acc, d) => acc + parseInt(d, 10), 0);
-                root.gpuPerc = sum / percs.length / 100;
+                root.thermal = parseFloat(data.trim());
             }
         }
     }
 
+    // Process {
+    //     id: battery
+
+    //     running: true
+    //     command: ["sh", "-c", "acpi -b | cut -d\" \" -f5 | tr -d %"]
+    //     stdout: SplitParser {
+    //         onRead: data => {
+    //             root.battery = parseInt(data.trim(), 10) || 0;
+    //         }
+    //     }
+    // }
+
     Process {
-        id: gpuTemp
+        id: fanSpeed
 
         running: true
-        command: ["sh", "-c", "sensors | jq -nRc '[inputs]'"]
+        command: ["sh", "-c", "sensors | grep cpu_fan | cut -w -f2"]
         stdout: SplitParser {
             onRead: data => {
-                let eligible = false;
-                let sum = 0;
-                let count = 0;
-                for (const line of JSON.parse(data)) {
-                    if (line === "Adapter: PCI adapter")
-                        eligible = true;
-                    else if (line === "")
-                        eligible = false;
-                    else if (eligible) {
-                        const match = line.match(/^(temp[0-9]+|GPU core|edge)+:\s+\+([0-9]+\.[0-9]+)°C/);
-                        if (match) {
-                            sum += parseFloat(match[2]);
-                            count++;
-                        }
-                    }
-                }
-                root.gpuTemp = count > 0 ? sum / count : 0;
+                root.fanSpeed = parseInt(data.trim(), 10) || 0;
             }
         }
     }
