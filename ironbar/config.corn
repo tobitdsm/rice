@@ -203,7 +203,7 @@ let {
         name = "cava"
         type = "script"
         mode = "watch"
-        cmd = "~/.config/ironbar/scripts/cava"
+        cmd = "~/.config/ironbar/scripts/cava2"
     }
 
     $volume = {
@@ -232,13 +232,26 @@ let {
         ]
     }
 
-    $weather = {
-        name = "weather"
-        class = "weather"
-        type = "script"
-        mode = "poll"
-        interval = 600000
-        cmd = "~/.config/ironbar/scripts/weather"
+    // $weather = {
+    //     name = "weather"
+    //     class = "weather"
+    //     type = "script"
+    //     mode = "poll"
+    //     interval = 600000
+    //     cmd = "~/.config/ironbar/scripts/weather"
+    // }
+
+    $updates = {
+        type = "custom"
+        bar = [
+            {
+                type = "button"
+                name = "updates"
+                class = "updates"
+                label = "{{echo -n \"󰓦 \"; eval \"checkupdates; yay -Qu\" | wc -l}}"
+                on_click = "!kitty -e bash -ic \"mirror; limit update\""
+            }
+        ]
     }
 
     $arch = {
@@ -257,7 +270,7 @@ let {
    
     $start = [ $focused $volume $cava $music ]
     $center = [ $clock ]
-    $end = [ $epoch $arch $weather $SysInfo $nm $UPower $tray $wlogout ]
+    $end = [ $epoch $arch $updates $SysInfo $nm $UPower $tray $wlogout ]
 }
 in {
     icon_theme = "Tela-circle-nord"
