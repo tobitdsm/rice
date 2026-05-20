@@ -197,13 +197,22 @@ let {
         ]
     }
 
-    $cava = {
+    $cava_1 = {
         transition_type = "slide_end"
         transition_duration = 750
-        name = "cava"
+        name = "cava_1"
         type = "script"
         mode = "watch"
-        cmd = "~/.config/ironbar/scripts/cava2"
+        cmd = "~/.config/ironbar/scripts/cava 1"
+    }
+
+    $cava_2 = {
+        transition_type = "slide_end"
+        transition_duration = 750
+        name = "cava_2"
+        type = "script"
+        mode = "watch"
+        cmd = "~/.config/ironbar/scripts/cava 2"
     }
 
     $volume = {
@@ -268,14 +277,24 @@ let {
         cmd = "date +%s | printf %X $(</dev/stdin)"
     }
    
-    $start = [ $focused $volume $cava $music ]
+    $start_1 = [ $focused $volume $cava_1 $music ]
+    $start_2 = [ $focused $volume $cava_2 $music ]
     $center = [ $clock ]
     $end = [ $epoch $arch $updates $SysInfo $nm $UPower $tray $wlogout ]
 }
 in {
-    icon_theme = "Tela-circle-nord"
-    position = "top"
-    start = $start
-    center = $center
-    end = $end
+    monitors.eDP-1 = {
+        icon_theme = "Tela-circle-nord"
+        position = "top"
+        start = $start_1
+        center = $center
+        end = $end
+    }
+    monitors.HDMI-A-1 = {
+        icon_theme = "Tela-circle-nord"
+        position = "top"
+        start = $start_2
+        center = $center
+        end = $end
+    }
 }
