@@ -14,6 +14,8 @@ Singleton {
 
     property int code
 
+    property bool day
+
     property string descriptions
 
     function reload(): void {
@@ -30,6 +32,7 @@ Singleton {
                 const json = JSON.parse(data);
                 root.code = json.code;
                 root.temperature = Math.round(json.temp);
+                root.day = json.day === 1;
 
                 // var process = new QProcess;
                 // process.start("cat", ["~/.config/quickshell/services/weather-descriptions.json"]);
@@ -70,7 +73,7 @@ Singleton {
             const json = JSON.parse(root.descriptions);
             const info = json[root.code.toString()];
             const hour = (new Date()).getHours();
-            if (hour >= 6 && hour < 18) {
+            if (root.day) {
                 root.icon = info.day.image;
                 root.description = info.day.description;
             } else {
