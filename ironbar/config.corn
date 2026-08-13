@@ -257,7 +257,7 @@ let {
                 type = "button"
                 name = "updates"
                 class = "updates"
-                label = "{{echo -n \"󰓦 \"; eval \"checkupdates; yay -Qu\" | wc -l}}"
+                label = "{{cat ~/.config/ironbar/scripts/updates}}"
                 on_click = "!kitty -e bash -ic \"mirror; limit update\""
             }
         ]
