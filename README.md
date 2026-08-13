@@ -199,7 +199,7 @@ My configuration was heavily inspired by the [wayfire rice](https://github.com/b
 
 I start ironbar at startup through Hyprland (see `hypr/hyprland.lua`). Note the reload 5 seconds after launching, this is to fix a weird startup issue where the cava element would be frozen.
 
-Side notes
+Side notes:
 - One of the elements on the bar displays the number of days I have been using arch. You can edit `ironbar/scripts/arch` to show your own day count, or remove the `$arch` element from `ironbar/config.corn` altogether.
 - One of the elements on the bar displays the number of available updates using `pacman` and `yay` through a cronjob. The job outputs this to a file located in `ironbar/scripts/updates`. The command is shown below, I recommend changing `~` to `/home/your_username` just to be safe.
 
