@@ -22,6 +22,7 @@
 		- [Hyprlock](#hyprlock)
 	- [Ironbar](#ironbar)
 	- [kitty](#kitty)
+	- [Korg nanoKONTROL2](#korg nanokontrol2)
 	- [Neofetch](#neofetch)
 	- [Quickshell](#quickshell)
 	- [Spicetify](#spicetify)
@@ -211,6 +212,15 @@ Side notes:
 [Installation](https://github.com/kovidgoyal/kitty) / [Arch package](https://archlinux.org/packages/extra/x86_64/kitty/)  
 Because this is the default terminal emulator shipped with Hyprland, and because it is very customizable, I just stuck with it.  
 Because this configuration is mainly colors, the biggest inspiration was again the [retro-futuristic rice](https://github.com/diinki/diinki-retrofuture) by diinki.
+
+### Korg nanoKONTROL2
+This is a bit of an unusual entry, as I recently bought a [nanoKONTROL2](https://www.korg.com/us/products/computergear/nanokontrol2/) and configured it to control various parts of my laptop.
+If you happen to also have one, I made a simple python script located in `hypr/nanokontrol-hyprland.py` that automatically runs on startup and listens for input events. The configuration is very intuitive, so I won't explain everything I did all here.
+
+To actually use the script, make sure it is executable, and link it like so:
+```bash
+ln -s ~/.config/hypr/nanokontrol-hyprland.py ~/.local/bin/nanokontrol-hyprland.py
+```
 
 ### Neofetch
 [Installation](https://github.com/dylanaraps/neofetch) / [AUR](https://aur.archlinux.org/packages/neofetch)  
