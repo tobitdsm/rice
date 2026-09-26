@@ -22,7 +22,7 @@
 		- [Hyprlock](#hyprlock)
 	- [Ironbar](#ironbar)
 	- [kitty](#kitty)
-	- [Korg nanoKONTROL2](#korg nanokontrol2)
+	- [Korg nanoKONTROL2](#korg-nanokontrol2)
 	- [Neofetch](#neofetch)
 	- [Quickshell](#quickshell)
 	- [Spicetify](#spicetify)
@@ -215,7 +215,7 @@ Because this configuration is mainly colors, the biggest inspiration was again t
 
 ### Korg nanoKONTROL2
 This is a bit of an unusual entry, as I recently bought a [nanoKONTROL2](https://www.korg.com/us/products/computergear/nanokontrol2/) and configured it to control various parts of my laptop.
-If you happen to also have one, I made a simple python script located in `hypr/nanokontrol-hyprland.py` that automatically runs on startup and listens for input events. The configuration is very intuitive, so I won't explain everything I did all here.
+If you happen to also have one, I made a simple python script located in `hypr/nanokontrol-hyprland.py` that automatically runs on startup and listens for input events. The configuration is very intuitive, so I won't explain everything I did here.
 
 To actually use the script, make sure it is executable, and link it like so:
 ```bash
