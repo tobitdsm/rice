@@ -70,6 +70,7 @@ hl.on("hyprland.start", function ()
   hl.exec_cmd("firefox")    -- open firefox at startup
   hl.exec_cmd("hyprlax --config ~/.config/hyprlax/config.toml") -- start hyprlax background manager
   hl.exec_cmd("sleep 2; hyprctl reload")    -- fix monitor setup issue
+  hl.exec_cmd("nanokontrol-hyprland.py")    -- use Korg nanoKONTROL2 as controller for Hyprland
 end)
 
 hl.on("config.reloaded", function ()
@@ -162,6 +163,8 @@ hl.config({
 
             vibrancy = 0.1696,
         },
+
+	-- screen_shader = "~/.config/hypr/shaders/grayscale.frag", -- grayscale
     },
 
     animations = {
@@ -304,6 +307,7 @@ hl.bind(mainMod .. " + T", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + C", hl.dsp.window.close())
 hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown --post-cmd 'shutdown now' || hyprctl dispatch 'hl.dsp.exit()' && shutdown now"))
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd(mail))
+hl.bind(mainMod .. " + SHIFT + M", hl.dsp.exec_cmd("google-chrome-stable webmail.ugent.be"))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
@@ -369,6 +373,62 @@ hl.bind("XF86AudioNext",  hl.dsp.exec_cmd("playerctl next"),       { locked = tr
 hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPlay",  hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = true })
+
+
+hl.bind("SUPER + F1", function ()
+    local game_mode = (hl.get_config("animations.enabled") == false)
+
+    if game_mode then
+        hl.exec_cmd("hyprctl reload")
+        return
+    end
+
+    hl.config({
+        general = {
+            gaps_in = 0, gaps_out = 0, -- Disable gaps
+            border_size = 0,
+        },
+
+        animations = {
+            enabled = false, -- Disable animations
+        },
+
+        -- Disable blur, shadow and window rounding
+        decoration = {
+            shadow = { enabled = false },
+            blur = { enabled = false },
+            rounding = 0,
+        }
+    })
+end)
+
+hl.bind("SUPER + tab", function ()
+    local layouts     = { "scrolling", "dwindle" }
+    local workspace   = hl.get_active_workspace()
+	if hl.get_active_special_workspace() then
+		workspace = hl.get_active_special_workspace()
+	end
+
+    local next_layout = "dwindle"
+
+    if not workspace then
+        return
+    end
+
+    for i = 1, #layouts do
+        if layouts[i] == workspace.tiled_layout then
+            local next_layout_idx = (i % #layouts) + 1
+            next_layout = layouts[next_layout_idx]
+            break
+        end
+    end
+
+	if workspace.special then
+		hl.workspace_rule({ workspace = tostring(workspace.name), layout = next_layout })
+	else
+		hl.workspace_rule({ workspace = tostring(workspace.id), layout = next_layout })
+	end
+end)
 
 
 --------------------------------
